@@ -1,0 +1,4 @@
+Rails set up
+
+rails new shurity -T -d postgresql
+rake db:create
