@@ -1,4 +1,23 @@
-Rails set up
+#Rails set up
 
 rails new shurity -T -d postgresql
 rake db:create
+
+##add bootstrap
+curl https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css > vendor/assets/stylesheets/bootstrap-3.3.6.min.css
+
+* app/assets/stylesheets/application.css
+ *
+ *= require bootstrap-3.3.6.min
+ *= require_tree .
+ *= require_self
+
+
+#controller
+rails g controller users
+
+#model
+rails g model User first_name last_name email answer_hash
+rails g model Category name
+rails g model Question text presentation_type
+rails g model Option opt_value
