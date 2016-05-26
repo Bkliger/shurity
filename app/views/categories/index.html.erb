@@ -1,7 +1,19 @@
-<div class="container-fluid">
+<div class="Container">
 
+  <div id="categories">
+    <div class="dropdown category-dropdown">
+      <!-- <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button"
+      aria-haspopup="true" aria-expanded="true">
+      </button> -->
+      <ul>
 
-  <%= select("cat", "name", Category.all.collect {|c| [ c.name] }, {include_blank: false}) %>
-  <%= button_to "Select Category", edit_user_path(@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
-<%= @user.id %>
+      <!-- <ul class="dropdown-menu" aria-labeledby="dropdownMenu1"> -->
+      <% @cat.each do |c| %>
+
+      <li><%= link_to c.name, new_user_path(c.id) %></li>
+
+      <% end %>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -55,5 +55,6 @@ Rails.application.routes.draw do
   #   endå
 
   root  to: "categories#index"
-  get "/users/:id/edit", to: "users#edit", as: "edit_user"
+  post    "/users/:user_id/",           to: "users#create"
+  get "/categories/:cat_id/users/new", to: "users#new", as: "new_user"
 end
