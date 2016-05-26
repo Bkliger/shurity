@@ -1,0 +1,17 @@
+<div class="Container">
+
+  <form>
+    <fieldset class="form-group">
+    <% @questions.each do |q| %>
+        <%= render "/users/" + q.presentation_type %>
+    <% end %>
+
+
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="formGroupExampleInput2">Another label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+    </fieldset>
+  </form>
+
+</div>
