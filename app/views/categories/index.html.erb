@@ -2,6 +2,6 @@
 
 
   <%= select("cat", "name", Category.all.collect {|c| [ c.name] }, {include_blank: false}) %>
-
-
+  <%= button_to "Select Category", edit_user_path(@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
+<%= @user.id %>
 </div>

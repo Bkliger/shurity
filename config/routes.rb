@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   #   endå
 
   root  to: "categories#index"
+  get "/users/:id/edit", to: "users#edit", as: "edit_user"
 end
