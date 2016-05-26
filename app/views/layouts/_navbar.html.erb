@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row"
+    <!-- BEGIN NAVBAR -->
+    <div id="mainNav">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hamburger" aria-expanded="false">
+          <h1>test</h1>
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+    ​
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="hamburger">
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </div>
+  </div><br><br><br>
+  <!-- END NAVBAR -->
+  <div class="row">
+    <% flash.each do |name, msg| %>
+      <% if name == "notice"%>
+        <strong id="flash-notice"> <%= name.capitalize %>: <%= msg %></strong>
+      <% elsif name == "error" || name == "alert" %>
+        <strong id="flash-error"> <%= name.capitalize %>: <%= msg %> </strong>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="container-fluid">
+
+
+  <%= select("cat", "name", Category.all.collect {|c| [ c.name] }, {include_blank: false}) %>
+
+
+</div>
