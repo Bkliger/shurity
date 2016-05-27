@@ -26,3 +26,14 @@ rails g model Option opt_value
 
   <%= cat = select("category", "name", Category.all.collect {|c| [ c.name] }, {include_blank: false, prompt: 'Select Category'}) %>
   <%= button_to "Select Category", edit_user_path(4,@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
+
+
+  //= require jquery-ui
+  //= require jquery-ui.min
+
+  *= require jquery-ui
+  *= require jquery-ui.min
+  *= require jquery-ui.structure
+  *= require jquery-ui.structure.min
+  *= require jquery-ui.theme
+  *= require jquery-ui.theme.min
