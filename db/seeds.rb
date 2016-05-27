@@ -19,5 +19,7 @@ question_1 = Question.create(category_id: cat_1.id, text: 'Color', presentation_
 question_2 = Question.create(category_id: cat_1.id, text: 'Stereo', presentation_type: 'radio')
 
 
-question_2 = Option.create(question_id: question_1.id, opt_value: 'Red')
-question_2 = Option.create(question_id: question_1.id, opt_value: 'Black')
+question_1 = Option.create(question_id: question_1.id, opt_value: 'Red')
+question_1 = Option.create(question_id: question_1.id, opt_value: 'Black')
+question_2 = Option.create(question_id: question_1.id, opt_value: 'Stereo')
+question_2 = Option.create(question_id: question_1.id, opt_value: 'Mono')

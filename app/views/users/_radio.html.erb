@@ -1,2 +1,8 @@
-<label for="formGroupExampleInput">Example label</label>
-<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+<div class="btn-group" data-toggle="buttons" id="Test Radio">
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> <%= options.first.opt_value %>
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option3" autocomplete="off"> <%= options.last.opt_value %>
+  </label>
+</div>
