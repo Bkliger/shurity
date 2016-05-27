@@ -1,9 +1,10 @@
-alert()
-
 $(function(){
   $("#save_answers").click(function( event ) {
-
-    console.log("test");
+    alert($('#Stereo > input:radio[name=options]:checked').val());
     event.preventDefault();
   });
+
+  $('#slider').slider({
+  animate: "fast"});
+
 });

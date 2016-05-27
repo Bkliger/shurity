@@ -1,0 +1,9 @@
+<div class="btn-group" data-toggle="buttons" id="testRadio">
+  <label class="btn btn-primary">
+    <% val1 = options.first.opt_value %>
+    <input type="radio" name="options" value="option1" id="option2" autocomplete="off"> <%= options.first.opt_value %>
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" value="<% options.first.opt_value %>" id="option3" autocomplete="off"> <%= options.last.opt_value %>
+  </label>
+</div>
