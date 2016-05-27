@@ -1,18 +1,18 @@
 <div class="Container">
 
+
   <form id="questions">
+    <%= form_tag('/users', controller: "users", action: "create", method: "post") do %>
+
+    <% end %>
     <fieldset class="form-group">
     <% @questions.each do |q| %>
         <% @options = q.options %>
-        <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options} %>
+        <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options, question: q} %>
     <% end %>
-
-
     </fieldset>
-    <fieldset class="form-group">
-      <label for="formGroupExampleInput2">Another label</label>
-      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-    </fieldset>
+
+<%= @question_array %>
      <button type="submit" id="save_answers" class="btn btn-primary">Save Answers</button>
   </form>
 

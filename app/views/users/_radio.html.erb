@@ -1,8 +1,7 @@
-<div class="btn-group" data-toggle="buttons" id="Test Radio">
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> <%= options.first.opt_value %>
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> <%= options.last.opt_value %>
-  </label>
+<div class="btn-group" data-toggle="buttons" id='Stereo' data-id='<%= question.text %>'>
+  <%= radio_button_tag(:options, options.first.opt_value) %>
+  <%= label_tag(:label1, options.first.opt_value) %>
+  <%= radio_button_tag(:options, options.last.opt_value) %>
+  <%= label_tag(:label2, options.last.opt_value) %>
+  <%= @question_hash %>
 </div>
