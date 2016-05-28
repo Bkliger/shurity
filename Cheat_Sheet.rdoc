@@ -35,3 +35,14 @@ Question.joins('JOIN answers ON answers.question_id = answer.id')
 
 Post.find_by_sql "SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id"
 Answer.find_by_sql "Select answer_text, text, presentation_type from answers, questions, users where answers.question_id = questions.id and users.id = 61"
+
+
+  //= require jquery-ui
+  //= require jquery-ui.min
+
+  *= require jquery-ui
+  *= require jquery-ui.min
+  *= require jquery-ui.structure
+  *= require jquery-ui.structure.min
+  *= require jquery-ui.theme
+  *= require jquery-ui.theme.min

@@ -9,10 +9,11 @@
     <% @questions.each do |q| %>
         <% @options = q.options %>
         <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options, question: q} %>
+        <hr>
     <% end %>
     </fieldset>
 
-    <div id="slider"></div>
+
 <%= @question_array %>
      <button type="submit" id="save_answers" class="btn btn-primary">Save Answers</button>
   </form>
