@@ -46,3 +46,11 @@ Answer.find_by_sql "Select answer_text, text, presentation_type from answers, qu
   *= require jquery-ui.structure.min
   *= require jquery-ui.theme
   *= require jquery-ui.theme.min
+
+
+    <% @answer = Answer.new(category_id: params[:cat_id]) %>
+      <%= form_for @answer do |f| %>
+      <%= f.text_field :answer_text %>
+      <%= f.hidden_field :category_id %>
+      <%= f.submit "Answer" %>
+      <% end %>

@@ -1,0 +1,14 @@
+<div class="Container">
+
+  <div id="cat_questions">
+
+      <%= form_for @answer do |f| %>
+      <%= f.text_field :answer_text %>
+<%= f.hidden_field :category_id %>      
+      <%= f.submit "Answer" %>
+      <% end %>
+
+
+  </div>
+
+</div>

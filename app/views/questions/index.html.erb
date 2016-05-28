@@ -1,0 +1,19 @@
+<section>
+  <div id="questionsindex">
+    <div class="container">
+
+        <% for question in @questions do %>
+            <div id="cat_questions">
+              <% @answer = Answer.new(category_id: params[:cat_id]) %>
+                <%= form_for @answer do |f| %>
+                <%= f.text_field :answer_text %>
+                <%= f.hidden_field :category_id %>
+                <%= f.submit "Answer" %>
+                <% end %>
+        </div>
+
+        <% end %>
+          <%= link_to "Save Answers", "/answers", method: "post" %>
+      </div>
+  </div>
+</section>
