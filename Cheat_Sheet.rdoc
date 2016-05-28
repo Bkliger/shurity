@@ -28,6 +28,15 @@ rails g model Option opt_value
   <%= button_to "Select Category", edit_user_path(4,@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
 
 
+rails generate model answer answer_text:string user:references category:references question:references
+
+Client.joins('LEFT OUTER JOIN addresses ON addresses.client_id = clients.id')
+Question.joins('JOIN answers ON answers.question_id = answer.id')
+
+Post.find_by_sql "SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id"
+Answer.find_by_sql "Select answer_text, text, presentation_type from answers, questions, users where answers.question_id = questions.id and users.id = 61"
+
+
   //= require jquery-ui
   //= require jquery-ui.min
 
