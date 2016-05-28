@@ -26,3 +26,6 @@ rails g model Option opt_value
 
   <%= cat = select("category", "name", Category.all.collect {|c| [ c.name] }, {include_blank: false, prompt: 'Select Category'}) %>
   <%= button_to "Select Category", edit_user_path(4,@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
+
+
+rails generate model answer answer_text:string user:references category:references question:references

@@ -5,11 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Answer.destroy_all
 Option.destroy_all
 Question.destroy_all
 Category.destroy_all
+User.destroy_all
 
-
+user1=User.create(first_name:"joe",last_name:"blow")
 
 cat_1 = Category.create(name: 'Bluetooth Speaker')
 Category.create(name: 'Over-Ear Headphones')
@@ -25,3 +27,5 @@ Option.create(question_id: question_1.id, opt_value: 'Black')
 Option.create(question_id: question_2.id, opt_value: 'Stereo')
 Option.create(question_id: question_2.id, opt_value: 'Mono')
 Option.create(question_id: question_3.id, opt_value: 'Budget')
+
+Answer.create(category_id:cat_1.id, user_id: user1.id, question_id: question_2.id)
