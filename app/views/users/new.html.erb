@@ -1,21 +1,36 @@
 <div class="Container">
 
+  <div id="cat_questions" data-category='<%=  @questions.first.category_id %>'>
+    <form id="questions">
 
-  <form id="questions">
-    <%= form_tag('/users', controller: "users", action: "create", method: "post") do %>
+      <%= form_for @questions do |question| %>
+      <% @questions.each do |q| %>
+          Question: <%= q.text. %>
+          <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options, question: q} %>
+      <% end %>
+  Name: <%= person_form.text_field :name %>
+  Admin: <%= person_form.check_box :admin %>
+<% end %>
 
-    <% end %>
-    <fieldset class="form-group">
-    <% @questions.each do |q| %>
-        <% @options = q.options %>
-        <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options, question: q} %>
-        <hr>
-    <% end %>
-    </fieldset>
-
-
-<%= @question_array %>
-     <button type="submit" id="save_answers" class="btn btn-primary">Save Answers</button>
-  </form>
+    </form>
+  </div>
 
 </div>
+
+
+
+
+
+
+<%= form_tag('/users', controller: "users", action: "create", method: "post") do %>
+
+<% end %>
+<fieldset class="form-group">
+<% @questions.each do |q| %>
+    <% @options = q.options %>
+    <%= render partial: "/users/" + q.presentation_type, locals: {options: q.options, question: q} %>
+<% end %>
+</fieldset>
+
+<div id="slider"></div>
+ <button type="submit" id="save_answers" class="btn btn-primary">Save Answers</button>
