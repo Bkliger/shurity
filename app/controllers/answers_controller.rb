@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  ActionController::Parameters.permit_all_parameters = true
   def new
     user = User.new
     user.save
