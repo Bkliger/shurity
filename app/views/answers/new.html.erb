@@ -1,25 +1,51 @@
 
 <%= form_tag "/answers" do %>
   <% @answer_array.each do |answer| %>
-
     <%= fields_for 'answers[]', answer do |p| %>
+      <% if answer.question.presentation_type == "slider" %>
+          <div>
+            <div>
+              <%=answer.question.text%>
+            </div>
+            <div class="slider" id="slider">
+            </div>
+          </div>
+        <% elsif answer.question.presentation_type == "reg-slider" %>
+             <div class="row-fluid">
 
-          <div class="field">
-            <%= p.label :answer_text %><br>
-            <%= p.text_field :answer_text %>
-          </div>
-          <div class="field">
-            <%= p.label :category_id %><br>
-            <%= p.text_field :category_id %>
-          </div>
-          <div class="field">
-            <%= p.label :user_id %><br>
-            <%= p.text_field :user_id %>
-          </div>
-          <div class="field">
-            <%= p.label :question_id %><br>
-            <%= p.text_field :question_id %>
-          </div>
+                <div class = "reg-slider">
+                  <span id="ex18-label-1"><%=answer.question.text%></span>
+                  <input id="ex19" type="text"
+                   data-provide="slider"
+                   data-slider-ticks="[1, 2, 3,4,5]"
+                   data-slider-ticks-labels='["Very Unimportant", "Unimportant", "Neutral", "Important", "Very Important"]'
+                   data-slider-min="1"
+                   data-slider-max="5"
+                   data-slider-step="1"
+                   data-slider-value="5"
+                   data-slider-tooltip="hide" />
+                 </div>
+               </div>
+       <% else %>
+
+
+           <div class="field">
+              <%= p.label :answer_text %><br>
+              <%= p.text_field :answer_text %>
+            </div>
+            <div class="field">
+              <%= p.label :category_id %><br>
+              <%= p.text_field :category_id %>
+            </div>
+            <div class="field">
+              <%= p.label :user_id %><br>
+              <%= p.text_field :user_id %>
+            </div>
+            <div class="field">
+              <%= p.label :question_id %><br>
+              <%= p.text_field :question_id %>
+            </div>
+        <% end %>
 
       <% end %>
     <% end %>
