@@ -30,12 +30,13 @@ rails g model Option opt_value
 
 rails generate model answer answer_text:string user:references category:references question:references
 
-Client.joins('LEFT OUTER JOIN addresses ON addresses.client_id = clients.id')
-Question.joins('JOIN answers ON answers.question_id = answer.id')
-
-Post.find_by_sql "SELECT p.title, c.author FROM posts p, comments c WHERE p.id = c.post_id"
 Answer.find_by_sql "Select answer_text, text, presentation_type from answers, questions, users where answers.question_id = questions.id and users.id = 61"
 
+Select * from options, answers, questions where answers.question_id = options.question.id
+
+Value = 29
+Option.find_by_sql "Select * from options, answers where Value = options.question_id"
+Option.find_by_sql "Select * from options, answers where answers.question_id = options.question_id"
 
   //= require jquery-ui
   //= require jquery-ui.min
@@ -77,3 +78,40 @@ Answer.find_by_sql "Select answer_text, text, presentation_type from answers, qu
 
 
       });
+
+
+      <div class="question btn-group" data-toggle="buttons" id='radio'>
+        <span id="ex18-label-1"><%=answer.question.text%></span>
+        <%= radio_button_tag("plug", answer.question.option.first.opt_value) %>
+        <%= label_tag(:label1, answer.question.option.first.opt_value) %>
+        <%= radio_button_tag("plug", answer.question.option.first.opt_value) %>
+        <%= label_tag(:label2, answer.question.option.first.opt_value) %>
+      </div>
+
+      <div class="question btn-group" data-toggle="buttons" id='radio'>
+        <span id="ex18-label-1"><%=answer.question.text%></span>
+        <!-- <!% name = "answers[][answer_text-" + answer.question_id.to_s + "]"%> -->
+        <%= radio_button_tag("answers[][answer_text]", @options.first.opt_value) %>
+        <%= label_tag(:label1, @options.first.opt_value) %>
+        <%= radio_button_tag("answers[][answer_text]", @options.last.opt_value) %>
+        <%= label_tag(:label2, @options.last.opt_value) %>
+      </div>
+      <div class="answer-field">
+        <%= p.label :category_id %><br>
+        <%= p.text_field :category_id %>
+      </div>
+      <div class="answer-field">
+        <%= p.label :user_id %><br>
+        <%= p.text_field :user_id %>
+      </div>
+      <div class="answer-field">
+        <%= p.label :question_id %><br>
+        <%= p.text_field :question_id %>
+      </div>
+
+
+      <% @options = Option.where("question_id = ?", answer.question_id) %>
+      @options.first.opt_value
+      <%= select_tag(:city_id, '<option value="1">Lisbon</option>...') %>
+
+      <%= options_for_select([['Lisbon', 1], ['Madrid', 2], ...]) %>
