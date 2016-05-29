@@ -10,4 +10,10 @@ $(function(){
     ticks_snap_bounds: 30
     });
 
+    $("#save-answers").click(function( event ) {
+
+
+      $('#slider_id').val($('#slider').slider('getValue'))
+      // event.preventDefault();
+    });
 });

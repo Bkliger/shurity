@@ -108,10 +108,3 @@ Option.find_by_sql "Select * from options, answers where answers.question_id = o
         <%= p.label :question_id %><br>
         <%= p.text_field :question_id %>
       </div>
-
-
-      <% @options = Option.where("question_id = ?", answer.question_id) %>
-      @options.first.opt_value
-      <%= select_tag(:city_id, '<option value="1">Lisbon</option>...') %>
-
-      <%= options_for_select([['Lisbon', 1], ['Madrid', 2], ...]) %>

@@ -12,10 +12,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    # keys = ["answer_text","question_id","category_id","user_id"]
-    # output = CSV.parse("yes,29,31,239").map {|a| Hash[keys.zip(a)]}
     params["answers"].each do |answer|
-      p answer
     Answer.create(answer_params(answer))
    end
     redirect_to root_path
