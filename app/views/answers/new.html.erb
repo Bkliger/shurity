@@ -1,96 +1,116 @@
+<section>
+  <div id="answerNew">
+    <div class="container-small">
+      <div class="row">
+            <div class="col-xs-1">
+            </div>
+            <div class="col-xs-7 question">
+              <%= form_tag "/answers" do %>
+                <% @answer_array.each do |answer| %>
+                  <%= fields_for 'answers[]', answer do |p| %>
+                    <% if answer.question.presentation_type == "slider" %>
+                        <div class="reg-slider">
+                          <div class="question-text">
+                            <%=answer.question.text%>
+                          </div>
 
-<div class="col-md-8 div-color">
-  <%= form_tag "/answers" do %>
-    <% @answer_array.each do |answer| %>
-      <%= fields_for 'answers[]', answer do |p| %>
-        <% if answer.question.presentation_type == "slider" %>
-            <div>
-              <div>
-                <%=answer.question.text%>
-              </div>
-              <div class="slider" id="slider">
-              </div>
-              <div class="answer-field">
-                <input type="text" id="slider_id" name="answers[][answer_text]"/>
-              <div class="answer-field">
-                <%= p.hidden_field :category_id %>
-              </div>
-              <div class="answer-field">
-                <%= p.hidden_field :user_id %>
-              </div>
-              <div class="answer-field">
-                <%= p.hidden_field :question_id %>
-              </div>
+                          <div class="slider" id="slider">
+                          </div>
+                          <div class="answer-field">
+                            <input type="hidden" id="slider_id" name="answers[][answer_text]"/>
+                          </div>
+                          <div class="answer-field">
+                            <%= p.hidden_field :category_id %>
+                          </div>
+                          <div class="answer-field">
+                            <%= p.hidden_field :user_id %>
+                          </div>
+                          <div class="answer-field">
+                            <%= p.hidden_field :question_id %>
+                          </div>
+                        </div>
+
+                    <% elsif answer.question.presentation_type == "reg-slider" %>
+                        <div class="row-fluid reg-slider">
+                          <div class="slider-value">
+                              <div class="question-text">
+                            <%=answer.question.text%>
+                              </div>
+                            <input id="ex19" type="text" name="answers[][answer_text]"
+                             data-provide="slider"
+                             data-slider-ticks="[1, 2, 3,4,5]"
+                             data-slider-ticks-labels='["Very Unimportant", "Unimportant", "Neutral", "Important", "Very Important"]'
+                             data-slider-min="1"
+                             data-slider-max="5"
+                             data-slider-step="1"
+                             data-slider-value="5"
+                             data-slider-tooltip="hide" />
+                           </div>
+                           <div class="answer-field">
+                             <%= p.hidden_field :category_id %>
+                           </div>
+                           <div class="answer-field">
+                             <%= p.hidden_field :user_id %>
+                           </div>
+                           <div class="answer-field">
+                             <%= p.hidden_field :question_id %>
+                           </div>
+                        <hr>
+                        </div>
+                      <% elsif answer.question.presentation_type == "select" %>
+                          <% @options = Option.where("question_id = ?", answer.question_id) %>
+                          <div class="reg-slider">
+                            <div class="question-text">
+                            <%=answer.question.text%>
+                            </div>
+                            <div>
+                              <select name="answers[][answer_text]">
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
+                                <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+                              </select>
+                            </div>
+                            <div class="field">
+                              <%= p.hidden_field :category_id %>
+                            </div>
+                            <div class="field">
+                              <%= p.hidden_field :user_id %>
+                            </div>
+                            <div class="field">
+                              <%= p.hidden_field :question_id %>
+                            </div>
+                          </div>
+
+                     <% else %>
+                      <span id="ex18-label-1"><%=answer.question.text%></span>
+                       <div class="field">
+                          <%= p.label :answer_text %><br>
+                          <%= p.text_field :answer_text %>
+                        </div>
+                        <div class="field">
+                          <%= p.label :category_id %><br>
+                          <%= p.text_field :category_id %>
+                        </div>
+                        <div class="field">
+                          <%= p.label :user_id %><br>
+                          <%= p.text_field :user_id %>
+                        </div>
+                        <div class="field">
+                          <%= p.label :question_id %><br>
+                          <%= p.text_field :question_id %>
+                        </div>
+                        <hr>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                  <div class="actions">
+                    <%= submit_tag(value="Save Answers", id: "save-answers") %>
+                  </div>
+              <% end %>
             </div>
-        <% elsif answer.question.presentation_type == "reg-slider" %>
-            <div class="row-fluid reg-slider">
-              <div class="slider-value">
-                <span id="ex18-label-1"><%=answer.question.text%></span>
-                <input id="ex19" type="text" name="answers[][answer_text]"
-                 data-provide="slider"
-                 data-slider-ticks="[1, 2, 3,4,5]"
-                 data-slider-ticks-labels='["Very Unimportant", "Unimportant", "Neutral", "Important", "Very Important"]'
-                 data-slider-min="1"
-                 data-slider-max="5"
-                 data-slider-step="1"
-                 data-slider-value="5"
-                 data-slider-tooltip="hide" />
-               </div>
-               <div class="answer-field">
-                 <%= p.hidden_field :category_id %>
-               </div>
-               <div class="answer-field">
-                 <%= p.hidden_field :user_id %>
-               </div>
-               <div class="answer-field">
-                 <%= p.hidden_field :question_id %>
-               </div>
-            </div>
-          <% elsif answer.question.presentation_type == "select" %>
-              <% @options = Option.where("question_id = ?", answer.question_id) %>
-              <div>
-                <%=answer.question.text%>
-                <select name="answers[][answer_text]">
-                  <option value="" disabled selected>Select your option</option>
-                  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
-                  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
-                </select>
-                <div class="field">
-                  <%= p.hidden_field :category_id %>
-                </div>
-                <div class="field">
-                  <%= p.hidden_field :user_id %>
-                </div>
-                <div class="field">
-                  <%= p.hidden_field :question_id %>
-                </div>
-            </div>
-         <% else %>
-          <span id="ex18-label-1"><%=answer.question.text%></span>
-           <div class="field">
-              <%= p.label :answer_text %><br>
-              <%= p.text_field :answer_text %>
-            </div>
-            <div class="field">
-              <%= p.label :category_id %><br>
-              <%= p.text_field :category_id %>
-            </div>
-            <div class="field">
-              <%= p.label :user_id %><br>
-              <%= p.text_field :user_id %>
-            </div>
-            <div class="field">
-              <%= p.label :question_id %><br>
-              <%= p.text_field :question_id %>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-      <div class="actions">
-        <%= submit_tag(value="Save Answers", id: "save-answers") %>
       </div>
-  <% end %>
-</div>
-
-<div class="col-md-5 div-color">
-</div>
+      <div class="col-xs-4">
+      </div>
+    </div>
+  </div>
+</section>
