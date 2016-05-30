@@ -108,3 +108,16 @@ Option.find_by_sql "Select * from options, answers where answers.question_id = o
         <%= p.label :question_id %><br>
         <%= p.text_field :question_id %>
       </div>
+
+
+
+Error Messages
+      <div class="row">
+        <% flash.each do |name, msg| %>
+          <% if name == "notice"%>
+            <strong id="flash-notice"> <%= name.capitalize %>: <%= msg %></strong>
+          <% elsif name == "error" || name == "alert" %>
+            <strong id="flash-error"> <%= name.capitalize %>: <%= msg %> </strong>
+          <% end %>
+        <% end %>
+      </div>

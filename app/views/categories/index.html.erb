@@ -1,19 +1,16 @@
-<div class="Container">
 
-  <div id="categories">
-    <div class="dropdown category-dropdown">
-      <!-- <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button"
-      aria-haspopup="true" aria-expanded="true">
-      </button> -->
-      <ul>
+<section>
+  <div id="splash-page" class="Container">
+    <div class="categories">
+      <div class="dropdown category-dropdown">
+        <ul>
+          <% @cat.each do |c| %>
 
-      <!-- <ul class="dropdown-menu" aria-labeledby="dropdownMenu1"> -->
-      <% @cat.each do |c| %>
+          <li><%= link_to c.name, new_answer_path(c.id) %></li>
 
-      <li><%= link_to c.name, new_answer_path(c.id) %></li>
-
-      <% end %>
-      </ul>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>

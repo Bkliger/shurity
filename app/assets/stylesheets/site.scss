@@ -21,7 +21,7 @@
   }
 
   .navbar {
-    height: 40px;
+    height: 30px;
   }
 
   .notification-dropdown {
@@ -55,5 +55,63 @@
       color: white;
       margin-top: 3px;
   }
+
+}
+
+#splash-page{
+  .categories {
+    margin-top: 100px;
+
+  }
+}
+
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+
+#answerNew {
+	font-size: 12px;
+  margin-top: 100px;
+
+	.question-text{
+	  font-size: 12px;
+	  color: black;
+		width: 500px;
+	}
+
+	.reg-slider{
+	  color: red;
+	  font-size: 7px;
+	  width: 250px;
+		float: left;
+		margin: 10px;
+	}
+
+	.question {
+		position: relative;
+	}
+
+	.row {
+		border-style: ridge;
+		border-width: 10px;
+		-webkit-box-shadow: 0 8px 6px -6px #70010e;
+  	-moz-box-shadow: 0 8px 6px -6px #70010e;
+		box-shadow: 0 8px 6px -6px #70010e;
+	}
+
+	.select{
+		font-size: 12px;
+		color: black;
+		float: left;
+		width: 300px;
+
+	}
+	.budget-slider{
+		font-size: 4px;
+		color: black;
+		float: left;
+				width: 300px;
+	}
 
 }
