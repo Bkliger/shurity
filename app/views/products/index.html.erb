@@ -1,0 +1,19 @@
+<section>
+  <div id="postsindex">
+    <div class="container">
+      <h1>Your Product Suggestion List</h1>
+      <hr>
+      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+        <% for product in @products do %>
+
+            <div>
+              <%= product.name %>
+              <%= link_to 'Product Details', product_path(product) %>
+
+            </div>
+
+          <% end %>
+        <%= link_to "Adjust your Product Preference Answers",  edit_answers_path(params[:user_id])%>
+    </div>
+  </div>
+</section>

@@ -133,3 +133,32 @@ Error Messages
 
       Product.create(name: "Portable Waterproof Wireless Bluetooth adsorbable Mini WIFI Speaker For SHOWER POOL Handsfree", desc: "",mpid: "b79f5686211dfb876fc283b7340e1944",model_num: "spea-32",range: "10 meters",weight: "185 grams",output: "3 watts",rechargeable: "y",
       battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1, image_url: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fg03.a.alicdn.com%2Fkf%2FHTB16EOYJpXXXXanXpXXq6xXFXXXw%2FPortable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping.jpg&imgrefurl=http%3A%2F%2Fwww.aliexpress.com%2Fstore%2Fproduct%2FPortable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping%2F1915556_32461432132.html&docid=fUwFJeYYWjjFSM&tbnid=BeBGZVBLxe7XIM%3A&w=1000&h=1000&itg=1&bih=745&biw=1310&ved=0ahUKEwiKzsPS9fjMAhVUT1IKHZEaAV8QMwgcKAAwAA&iact=mrc&uact=8",)
+
+
+Answer.find_by_sql "Select answer_text, presentation_type,  questions.category_id, text  from answers, questions, users where answers.question_id = questions.id and users.id = 453"
+
+Answer.find_by_sql ["Select answer_text, category_id, question_id from answers where users.id = ?", params[:user_id]]
+Answer.find_by_sql "Select answer_text, category_id, question_id from answers where users.id = 253"
+  answers = Answer.limit(10).find_by_sql ["Select answer_text, presentation_type,  questions.category_id, text  from answers, questions, users where answers.question_id = questions.id and users.id = ?", params[:user_id]]
+Answer.joins('LEFT OUTER JOIN addresses ON addresses.client_id = clients.id')
+
+Answer.find(:all, limit: 10,
+            joins:  "LEFT JOIN `questions` ON questions.user_id = answers.question_id",
+            select: "answers.*, questions.*")
+
+Answer.limit(10).joins("INNER JOIN questions ON answers.question_id = questions.id").select("answers.*, questions.*")
+
+scope :my_scope_name_here, -> {
+        joins("LEFT JOIN `user_points` ON user_points.user_id = users.id")
+        .select("users.*, count(user_points.id)")
+        .group("user_points.user_id")
+}
+You can also chain .where between the .join and the .select. Hope this helps someone in the future.
+
+shareimprove this answer
+edited Feb 4 '15 at 10:33
+answered Sep 23 '13 at 3:39
+
+8bithero
+7741015
+add a comment

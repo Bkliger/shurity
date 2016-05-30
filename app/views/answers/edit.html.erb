@@ -7,7 +7,7 @@
             <div class="col-xs-9 question">
               <!-- <!%=products_path = "/categories/" + params[:cat_id] + "/users/" + @user_id.to_s + "/products"%> -->
               <%= form_tag "/answers" do %>
-                <% @answer_array.each do |answer| %>
+                <% @update_answer_array.each do |answer| %>
                   <%= fields_for 'answers[]', answer do |p| %>
                     <% if answer.question.presentation_type == "slider" %>
                         <div class="budget-slider">
