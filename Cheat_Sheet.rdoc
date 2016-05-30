@@ -21,6 +21,8 @@ rails g model User first_name last_name email answer_hash
 rails g model Category name
 rails g model Question text presentation_type
 rails g model Option opt_value
+rails g model Product mpid model_num range weight output rechargeable:boolean battery solar:boolean charge_time remote_buttons:boolean speakerphone:boolean bluetooth_ver radio:boolean waterproof_ip dust_ip category:references
+
 
 
 
@@ -121,3 +123,13 @@ Error Messages
           <% end %>
         <% end %>
       </div>
+
+
+      Product.create(name: "Pyle Aqua SunBlast Bluetooth Floating Speaker System", desc:,mpid: "d0e463ff0553742d012b6eea4fa47d10",model_num:,range: "10 meters",weight: "3.4 lbs",output:,rechargeable: "y",
+      battery: "4",solar: "y",charge_time:,remote_buttons:,speakerphone: "",bluetooth_ver: "",radio: "",waterproof_ip: "",dust_ip: "",category_id: cat_1, image_url: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F61Su3os8W%252BL._SY355_.jpg&imgrefurl=http%3A%2F%2Fwww.amazon.com%2FPyle-PWR95SBK-Bluetooth-Waterproof-Rechargeable%2Fdp%2FB00K303KPY&docid=zLnbk8ePgQtQrM&tbnid=qA42uqx_d5dEXM%3A&w=355&h=355&bih=745&biw=1310&ved=0ahUKEwjGgvfxn_jMAhUHVlIKHbNXB40QMwgeKAEwAQ&iact=mrc&uact=8",)
+
+      Product.create(name: "New Waterproof Portable Wireless Bluetooth Mini Speaker Shower Pool Car Handsfree", mpid: "4d313748141cbdfe6006071b4e36419d",model_num: "",range: "10 meters",weight: "45 grams",output: "",rechargeable: "y",
+      battery: "6",solar: "n",charge_time: "3 hrs",remote_buttons: "",speakerphone: "",bluetooth_ver: "3.0+",radio: "",waterproof_ip: "",dust_ip: "",category_id: cat_1, image_url: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F510qe5CzVqL._SY355_.jpg&imgrefurl=http%3A%2F%2Fwww.amazon.com%2FBlue-Waterproof-Portable-Bluetooth-Handsfree%2Fdp%2FB00LNNTKKE&docid=hY401o7rOTQHhM&tbnid=mxl8ht60AIY4rM%3A&w=355&h=355&bih=805&biw=1338&ved=0ahUKEwjL_L-n-fjMAhVYE1IKHewTD2YQMwg-KAAwAA&iact=mrc&uact=8",)
+
+      Product.create(name: "Portable Waterproof Wireless Bluetooth adsorbable Mini WIFI Speaker For SHOWER POOL Handsfree", desc: "",mpid: "b79f5686211dfb876fc283b7340e1944",model_num: "spea-32",range: "10 meters",weight: "185 grams",output: "3 watts",rechargeable: "y",
+      battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1, image_url: "https://www.google.com/imgres?imgurl=http%3A%2F%2Fg03.a.alicdn.com%2Fkf%2FHTB16EOYJpXXXXanXpXXq6xXFXXXw%2FPortable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping.jpg&imgrefurl=http%3A%2F%2Fwww.aliexpress.com%2Fstore%2Fproduct%2FPortable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping%2F1915556_32461432132.html&docid=fUwFJeYYWjjFSM&tbnid=BeBGZVBLxe7XIM%3A&w=1000&h=1000&itg=1&bih=745&biw=1310&ved=0ahUKEwiKzsPS9fjMAhVUT1IKHZEaAV8QMwgcKAAwAA&iact=mrc&uact=8",)
