@@ -1,0 +1,22 @@
+<div id="usershow">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-10">
+          <h1><%= @product.name %> </h1>
+          Weight<h3><%= @product.weight %></h3>
+          Rechargeable?<h3><%= @product.rechargeable %></h3>
+          Solar?<h3><%= @product.solar %></h3>
+          Speakerphone?<h3><%= @product.speakerphone %></h3>
+          Radio?<h3><%= @product.radio %></h3>
+          <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" %>
+          <%= link_to 'Back', my_path %>
+
+        </div>
+      </div>
+      <br />
+    </div>
+  </section>
+</div>

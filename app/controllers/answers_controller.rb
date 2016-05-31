@@ -27,8 +27,18 @@ class AnswersController < ApplicationController
       @update_answer_array = []
     answers.each do |a|
 
-      @update_answer_array << Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text)
+      @update_answer_array << Answer.new(id: a.id, category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text)
     end
+
+
+  def update
+
+    params["answers"].each do |answer|
+    Answer.update(answer_params(answer))
+   end
+   redirect_to root_path
+
+  end
 
 
 
