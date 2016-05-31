@@ -5,9 +5,9 @@ class Assoc < ActiveRecord::Migration
     #   t.belongs_to :category, index:true
     # end
 
-    change_table :options do |t|
-      t.belongs_to :question, index:true
-    end
+    # change_table :options do |t|
+    #   t.belongs_to :question, index:true
+    # end
 
   end
 end
