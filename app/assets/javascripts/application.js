@@ -14,5 +14,50 @@
 
 //= require jquery_ujs
 //= require bootstrap-slider
-//= require turbolinks
+
 //= require_tree .
+
+$(document).ready(function() {
+// $(document).on("page:load", function(){
+
+  // alert("executing")
+    $('#slider').slider(
+    {
+    ticks: [0, 100, 200, 300, 400],
+     ticks_positions: [0, 20, 40, 60, 80, 100],
+    ticks_labels: ['$0', '$100', '$200', '$300', '$400'],
+    ticks_snap_bounds: 30,
+    provide: "slider"
+    });
+
+
+    var sliderVal = $('#slider_id').val()
+    $('#slider').slider('setValue',parseInt(sliderVal))
+    // $('#slider_id').val($('#slider').slider('getValue'));
+
+    $("#save-answers").click(function( event ) {
+
+
+      $('#slider_id').val($('#slider').slider('getValue'));
+      // event.preventDefault();
+    });
+    $("#update-answers").click(function( event ) {
+
+
+      $('#slider_id').val($('#slider').slider('getValue'));
+      // event.preventDefault();
+    });
+
+    $('.reg-slider-input').each(function() {
+
+      $(this).val($(this).data("slider-answer"))
+      $(this).data("value",$(this).data("slider-answer"))
+      // console.log($(this).val())
+        // console.log($(this).data("value"))
+      // this.data-value(data-slider-answer)
+      // console.log($(this).data("slider-answer"))
+
+    })
+
+
+});
