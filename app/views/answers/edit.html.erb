@@ -6,8 +6,8 @@
             </div>
             <div class="col-xs-9 question">
               <!-- <!%=products_path = "/categories/" + params[:cat_id] + "/users/" + @user_id.to_s + "/products"%> -->
-              <%= form_tag "/answers" do %>
-                <% @answer_array.each do |answer| %>
+              <%= form_tag('/answers/update', method: :put)  do %>
+                <% @update_answer_array.each do |answer| %>
                   <%= fields_for 'answers[]', answer do |p| %>
                     <% if answer.question.presentation_type == "slider" %>
                         <div class="budget-slider">
@@ -17,6 +17,9 @@
                           <div id="slider"></div>
                           <div class="answer-field">
                             <input type="hidden" id="slider_id" name="answers[][answer_text]"/>
+                          </div>
+                          <div class="answer-field">
+                            <%= p.hidden_field :id %>
                           </div>
                           <div class="answer-field">
                             <%= p.hidden_field :category_id %>
@@ -36,7 +39,7 @@
                                 <%=answer.question.text%>
                               </div>
                             <div>
-                            <input id="ex19" type="text" name="answers[][answer_text]"
+                            <input id="ex19" type="text" name="answers[][answer_text]" data-value="<%=answer.answer_text%>" value="<%=answer.answer_text%>"
                              data-provide="slider"
                              data-slider-ticks="[1, 2, 3,4,5]"
                              data-slider-ticks-labels='["Very Unimportant", "Unimportant", "Neutral", "Important", "Very Important"]'
@@ -45,6 +48,9 @@
                              data-slider-step="1"
                              data-slider-value="5"
                              data-slider-tooltip="hide" />
+                           </div>
+                           <div class="answer-field">
+                             <%= p.hidden_field :id %>
                            </div>
                            <div class="answer-field">
                              <%= p.hidden_field :category_id %>
@@ -61,7 +67,7 @@
                           <% @options = Option.where("question_id = ?", answer.question_id) %>
                           <div class="select">
                             <div class="question-text">
-                            <%=answer.question.text%>
+                              <%=answer.question.text%>
                             </div>
                             <div class="select">
                               <select name="answers[][answer_text]">
@@ -70,7 +76,10 @@
                                 <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
                               </select>
                             </div>
-                            <div class="field">
+                            <div class="answer-field">
+                              <%= p.hidden_field :id %>
+                            </div>
+                              <div class="field">
                               <%= p.hidden_field :category_id %>
                             </div>
                             <div class="field">
@@ -83,6 +92,9 @@
 
                      <% else %>
                       <span id="ex18-label-1"><%=answer.question.text%></span>
+                       <div class="answer-field">
+                         <%= p.hidden_field :id %>
+                       </div>
                        <div class="field">
                           <%= p.label :answer_text %><br>
                           <%= p.text_field :answer_text %>
@@ -103,7 +115,7 @@
                     <% end %>
                   <% end %>
                   <div class="actions">
-                    <%= submit_tag(value="Save Answers", id: "save-answers") %>
+                    <%= submit_tag(value="Update Answers", id: "update-answers") %>
                   </div>
               <% end %>
             </div>
