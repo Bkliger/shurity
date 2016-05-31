@@ -16,10 +16,11 @@
                           </div>
                           <div id="slider"></div>
                           <div class="answer-field">
-                            <input type="hidden" id="slider_id" name="answers[][answer_text]"/>
+                            <input type="hidden" id="slider_id" name="answers[][answer_text]" value="<%=answer.answer_text%>"/>
+                            data-value <%=answer.answer_text%> value <%=answer.answer_text%>
                           </div>
                           <div class="answer-field">
-                            <%= p.hidden_field :id %>
+                               <%= p.hidden_field :stored_answer_id %>
                           </div>
                           <div class="answer-field">
                             <%= p.hidden_field :category_id %>
@@ -39,18 +40,22 @@
                                 <%=answer.question.text%>
                               </div>
                             <div>
-                            <input id="ex19" type="text" name="answers[][answer_text]" data-value="<%=answer.answer_text%>" value="<%=answer.answer_text%>"
+                            <input class="reg-slider-input" type="text" name="answers[][answer_text]"
                              data-provide="slider"
                              data-slider-ticks="[1, 2, 3,4,5]"
                              data-slider-ticks-labels='["Very Unimportant", "Unimportant", "Neutral", "Important", "Very Important"]'
                              data-slider-min="1"
                              data-slider-max="5"
                              data-slider-step="1"
-                             data-slider-value="5"
-                             data-slider-tooltip="hide" />
+                             data-slider-value="<%=answer.answer_text%>"
+                             data-slider-tooltip="hide"
+                             data-slider-answer="<%=answer.answer_text%>"
+                             />
+
                            </div>
+
                            <div class="answer-field">
-                             <%= p.hidden_field :id %>
+                             <%= p.hidden_field :stored_answer_id %>
                            </div>
                            <div class="answer-field">
                              <%= p.hidden_field :category_id %>
@@ -71,13 +76,21 @@
                             </div>
                             <div class="select">
                               <select name="answers[][answer_text]">
-                                <option value="" disabled selected>Select your option</option>
-                                <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
-                                <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+                                <% if answer.answer_text == "none" %>
+                                  <option value="" disabled selected>Select your option</option>
+                                  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
+                                  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+                                <% elsif answer.answer_text == @options.first.opt_value%>
+                                  <option value="<%= @options.first.opt_value %>"selected><%= @options.first.opt_value %></option>
+                                  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+                                <% else answer.answer_text == @options.last.opt_value%>
+                                  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
+                                  <option value="<%= @options.last.opt_value %>"selected><%= @options.last.opt_value %></option>
+                                <% end %>
                               </select>
                             </div>
                             <div class="answer-field">
-                              <%= p.hidden_field :id %>
+                                 <%= p.hidden_field :stored_answer_id %>
                             </div>
                               <div class="field">
                               <%= p.hidden_field :category_id %>
@@ -93,8 +106,7 @@
                      <% else %>
                       <span id="ex18-label-1"><%=answer.question.text%></span>
                        <div class="answer-field">
-                         <%= p.hidden_field :id %>
-                       </div>
+                         <%= p.hidden_field :stored_answer_id %>
                        <div class="field">
                           <%= p.label :answer_text %><br>
                           <%= p.text_field :answer_text %>

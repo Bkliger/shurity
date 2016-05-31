@@ -26,16 +26,18 @@ class AnswersController < ApplicationController
     answers = Answer.find_by_sql ["Select * from answers where user_id = ?", params[:user_id]]
       @update_answer_array = []
     answers.each do |a|
-
-      @update_answer_array << Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text)
+      check_answer = Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text, stored_answer_id: a.id)
+      @update_answer_array << check_answer
     end
 
 
   def update
-    binding.pry
     params["answers"].each do |answer|
-    Answer.update(answer_params(answer))
-   end
+      if answer[:stored_answer_id] != nil
+        answer_obj = Answer.find(answer[:stored_answer_id].to_i)
+        answer_obj.update(answer)
+      end
+    end
    redirect_to root_path
 
   end
