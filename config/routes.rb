@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get  "/categories/:cat_id/answers/new",       to: "answers#new",        as: "new_answer"
   post "/answers", to: "answers#create"
   get "/users/:user_id/answers/edit", to: "answers#edit", as: "edit_answers"
-  post "/answers/update", to: "answers#update"
+  put "/answers/update", to: "answers#update"
 
 
   get "/about", to: "users#about", as: "about"
