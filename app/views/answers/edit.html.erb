@@ -2,9 +2,12 @@
   <div class="container-answers">
     <div class="container-small">
       <div class="row">
-            <div class="col-xs-1">
+        <h1>Select Your Product Preferences Here</h1>
+      </div>
+      <div class="row">
+            <div class="col-xs-1 col-border">
             </div>
-            <div class="col-xs-9 question">
+            <div class="col-xs-9 col-border question">
               <!-- <!%=products_path = "/categories/" + params[:cat_id] + "/users/" + @user_id.to_s + "/products"%> -->
               <%= form_tag('/answers/update', method: :put)  do %>
                 <% @update_answer_array.each do |answer| %>
@@ -69,11 +72,11 @@
                       </div>
                       <% elsif answer.question.presentation_type == "3-select" %>
                           <% @options = Option.where("question_id = ?", answer.question_id) %>
-                          <div class="select">
-                            <div class="question-text">
-                              <%=answer.question.text%>
-                            </div>
+                          <div>
                             <div class="select">
+                              <div class="question-text">
+                                <%=answer.question.text%>
+                              </div>
                               <select name="answers[][answer_text]">
                                 <% if answer.answer_text == "none" %>
                                   <option value="none"  selected>Select your option</option>
@@ -91,7 +94,7 @@
                             <div class="answer-field">
                                  <%= p.hidden_field :stored_answer_id %>
                             </div>
-                              <div class="field">
+                            <div class="field">
                               <%= p.hidden_field :category_id %>
                             </div>
                             <div class="field">
@@ -100,12 +103,13 @@
                             <div class="field">
                               <%= p.hidden_field :question_id %>
                             </div>
-                          </div>
+                          </div><br>
 
                      <% else %>
                       <span id="ex18-label-1"><%=answer.question.text%></span>
                        <div class="answer-field">
                          <%= p.hidden_field :stored_answer_id %>
+                      </div>
                        <div class="field">
                           <%= p.label :answer_text %><br>
                           <%= p.text_field :answer_text %>
@@ -125,14 +129,15 @@
                       <% end %>
                     <% end %>
                   <% end %>
-                  <div class="actions">
-                    <%= submit_tag(value="Update Answers", id:"update-answers") %>
-                  </div>
+              </div>
+              <div class="actions col-xs-2 col-border">
+                <%= submit_tag(value="Update Answers", id:"update-answers", class:"btn-primary") %>
+              </div>
               <% end %>
-            </div>
+
       </div>
-      <div class="col-xs-2">
-      </div>
+      <!-- <div class="col-xs-2">
+      </div> -->
     </div>
   </div>
 </section>
