@@ -1,6 +1,7 @@
 <div id="product-show">
   <section>
     <div class = "row center">
+      <br><br>
       <h3 class="display-4"> <%=@product.category.name %>&nbsp Product Detail</h3>
     </div>
     <div class="container">
@@ -8,8 +9,7 @@
       <div class="row">
         <div class="col-xs-4 left">
           <!-- <img src="<!%=@product.image_URL%>" style="width: 90%; height: 90%" alt="MDN"> -->
-            <!-- <img src="shurity.svg" alt="MDN"> -->
-            <%= image_tag("shurity.svg") %>
+            <%= image_tag(@product.image_URL, :class => "prod-image")%>
         </div>
         <div class="col-xs-8">
           <h3 class="display-4"><%= @product.name %> </h3>
