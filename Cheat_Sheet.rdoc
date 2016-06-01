@@ -162,3 +162,15 @@ answered Sep 23 '13 at 3:39
 8bithero
 7741015
 add a comment
+
+<% if answer.answer_text == "none" %>
+  <option value="none"  selected>Select your option</option>
+  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
+  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+<% elsif answer.answer_text == @options.first.opt_value%>
+  <option value="<%= @options.first.opt_value %>"selected><%= @options.first.opt_value %></option>
+  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+<% else answer.answer_text == @options.last.opt_value%>
+  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
+  <option value="<%= @options.last.opt_value %>"selected><%= @options.last.opt_value %></option>
+<% end %>

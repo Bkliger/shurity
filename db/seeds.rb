@@ -31,6 +31,8 @@ question_6 = Question.create(category_id: cat_1.id, text: 'Does the sound need t
 
 Option.create(question_id: question_10.id, opt_value: 'Red')
 Option.create(question_id: question_10.id, opt_value: 'Black')
+Option.create(question_id: question_10.id, opt_value: 'White')
+Option.create(question_id: question_10.id, opt_value: 'Grey')
 Option.create(question_id: question_4.id, opt_value: 'Yes')
 Option.create(question_id: question_4.id, opt_value: 'No')
 Option.create(question_id: question_6.id, opt_value: 'Yes')

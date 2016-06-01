@@ -66,8 +66,9 @@
                             <div class="select">
                               <select name="answers[][answer_text]">
                                 <option value="none" selected>Select your option</option>
-                                <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
-                                <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
+                                <% @options.each do |o|%>
+                                    <option value="<%= o.opt_value %>"><%= o.opt_value %></option>
+                                <% end %>
                               </select>
                             </div>
                             <div class="field">

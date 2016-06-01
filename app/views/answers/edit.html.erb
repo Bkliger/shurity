@@ -71,23 +71,21 @@
                         </div>
                       </div>
                       <% elsif answer.question.presentation_type == "3-select" %>
-                          <% @options = Option.where("question_id = ?", answer.question_id) %>
+                          <% @options = Option.where("question_id = ?", answer.question_id)%>
                           <div>
                             <div class="select">
                               <div class="question-text">
                                 <%=answer.question.text%>
                               </div>
                               <select name="answers[][answer_text]">
-                                <% if answer.answer_text == "none" %>
-                                  <option value="none"  selected>Select your option</option>
-                                  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
-                                  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
-                                <% elsif answer.answer_text == @options.first.opt_value%>
-                                  <option value="<%= @options.first.opt_value %>"selected><%= @options.first.opt_value %></option>
-                                  <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
-                                <% else answer.answer_text == @options.last.opt_value%>
-                                  <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
-                                  <option value="<%= @options.last.opt_value %>"selected><%= @options.last.opt_value %></option>
+                                <% @options.each do |o|%>
+                                  <% if answer.answer_text == o.opt_value%>
+                                      <option value="<%= o.opt_value %>"selected><%= o.opt_value %></option>
+                                  <% elsif answer.answer_text == "none" %>
+                                      <option value="none"  selected>Select your option</option>
+                                  <% else %>
+                                      <option value="<%= o.opt_value %>"><%= o.opt_value %></option>
+                                  <% end %>
                                 <% end %>
                               </select>
                             </div>
