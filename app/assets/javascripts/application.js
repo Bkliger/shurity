@@ -43,8 +43,9 @@ $(document).ready(function() {
     });
     $("#update-answers").click(function( event ) {
 
-
+      console.log($('#slider').slider('getValue'))
       $('#slider_id').val($('#slider').slider('getValue'));
+      console.log($('#slider_id').val())
       // event.preventDefault();
     });
 

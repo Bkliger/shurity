@@ -70,10 +70,14 @@
 	background: #BABABA;
 }
 
-#answerNew {
+.container-answers {
 	font-size: 12px;
   margin-top: 100px;
 
+  .col-border {
+    border-width: 5px;
+    border-style: ridge;
+  }
 	.question-text{
 	  font-size: 12px;
 	  color: black;
@@ -93,8 +97,8 @@
 	}
 
 	.row {
-		border-style: ridge;
-		border-width: 10px;
+		// border-style: ridge;
+		// border-width: 2px;
 		-webkit-box-shadow: 0 8px 6px -6px #70010e;
   	-moz-box-shadow: 0 8px 6px -6px #70010e;
 		box-shadow: 0 8px 6px -6px #70010e;
@@ -108,7 +112,7 @@
 
 	}
 	.budget-slider{
-		font-size: 4px;
+		font-size: 10px;
 		color: black;
 		float: left;
 				width: 300px;

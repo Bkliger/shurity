@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
     user.save
     @user_id = User.last.id
     @answer_array = []
-    @questions = Category.find(params[:cat_id]).questions.order(:id)
+    @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
     @questions.each do |q|
       @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
 
@@ -23,7 +23,8 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    answers = Answer.find_by_sql ["Select * from answers where user_id = ?", params[:user_id]]
+
+    answers = Answer.where("user_id = ?",params[:user_id]).order(:question_id)
       @update_answer_array = []
     answers.each do |a|
       check_answer = Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text, stored_answer_id: a.id)
