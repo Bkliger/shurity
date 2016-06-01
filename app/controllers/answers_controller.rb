@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
   end
 
   def edit
-    answers = Answer.find_by_sql ["Select * from answers where user_id = ?", params[:user_id]]
+    answers = Answer.find_by_sql ["Select * from answers where user_id = ? order by question_id", params[:user_id]]
       @update_answer_array = []
     answers.each do |a|
       check_answer = Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text, stored_answer_id: a.id)
