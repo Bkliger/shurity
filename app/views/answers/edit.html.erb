@@ -1,5 +1,5 @@
 <section>
-  <div id="answerUpdate">
+  <div class="container-answers">
     <div class="container-small">
       <div class="row">
             <div class="col-xs-1">
@@ -9,7 +9,7 @@
               <%= form_tag('/answers/update', method: :put)  do %>
                 <% @update_answer_array.each do |answer| %>
                   <%= fields_for 'answers[]', answer do |p| %>
-                    <% if answer.question.presentation_type == "slider" %>
+                    <% if answer.question.presentation_type == "2-slider" %>
                         <div class="budget-slider">
                           <div class="question-text">
                             <%=answer.question.text%>
@@ -32,7 +32,7 @@
                           </div>
                         </div>
 
-                    <% elsif answer.question.presentation_type == "reg-slider" %>
+                    <% elsif answer.question.presentation_type == "1-reg-slider" %>
                         <div class="reg-slider">
                           <div class="slider-value">
                               <div class="question-text">
@@ -67,7 +67,7 @@
                            </div>
                         </div>
                       </div>
-                      <% elsif answer.question.presentation_type == "select" %>
+                      <% elsif answer.question.presentation_type == "3-select" %>
                           <% @options = Option.where("question_id = ?", answer.question_id) %>
                           <div class="select">
                             <div class="question-text">
@@ -76,7 +76,7 @@
                             <div class="select">
                               <select name="answers[][answer_text]">
                                 <% if answer.answer_text == "none" %>
-                                  <option value="" disabled selected>Select your option</option>
+                                  <option value="none"  selected>Select your option</option>
                                   <option value="<%= @options.first.opt_value %>"><%= @options.first.opt_value %></option>
                                   <option value="<%= @options.last.opt_value %>"><%= @options.last.opt_value %></option>
                                 <% elsif answer.answer_text == @options.first.opt_value%>
@@ -126,7 +126,7 @@
                     <% end %>
                   <% end %>
                   <div class="actions">
-                    <%= submit_tag(value="Update Answers", id: "update-answers") %>
+                    <%= submit_tag(value="Update Answers", id:"update-answers") %>
                   </div>
               <% end %>
             </div>

@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
     user.save
     @user_id = User.last.id
     @answer_array = []
-    @questions = Category.find(params[:cat_id]).questions.order(:id)
+    @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
     @questions.each do |q|
       @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
 
