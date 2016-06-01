@@ -1,22 +1,49 @@
-<div id="usershow">
+<div id="product-show">
   <section>
+    <div class = "row center">
+      <br><br>
+      <h3 class="display-4"> <%=@product.category.name %>&nbsp Product Detail</h3>
+    </div>
     <div class="container">
+
       <div class="row">
-        <div class="col-xs-2">
+        <div class="col-xs-4 left">
+          <!-- <img src="<!%=@product.image_URL%>" style="width: 90%; height: 90%" alt="MDN"> -->
+            <%= image_tag(@product.image_URL, :class => "prod-image")%>
         </div>
-        <div class="col-xs-10">
-          <h1><%= @product.name %> </h1>
+        <div class="col-xs-8">
+          <h3 class="display-4"><%= @product.name %> </h3>
+          <h4> Why this product fits for you </h4>
+          <t1> Positive Factors:</t1>
+          <ul>
+            <li>WaterProof - This speaker has a Water IP rating of 7</li>
+            <li>Device buttons</li>
+            <li>Battery Life is 75% for the category</li>
+            <li>Portability: Speaker is lightweight and 92% best in category</li>
+            <li>This product is within your budget</li>
+          </ul>
+          <ul>
+            <li>Speakerphone: Not available</li>
+            <li>Sound quality is 54% of category</li>
+          </ul>
           Weight<h3><%= @product.weight %></h3>
           Rechargeable?<h3><%= @product.rechargeable %></h3>
           Solar?<h3><%= @product.solar %></h3>
           Speakerphone?<h3><%= @product.speakerphone %></h3>
           Radio?<h3><%= @product.radio %></h3>
           <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" %>
-          git statu<%= link_to 'Back', my_path %>
+          <%= link_to 'Back', my_path %>
 
         </div>
       </div>
-      <br />
+      <div class="row">
+        <div class="col-xs-4 left">
+        </div>
+        <div class="col-xs-4 left">
+        </div>
+        <div class="col-xs-4 left">
+        </div>
+      </div>
     </div>
   </section>
 </div>
