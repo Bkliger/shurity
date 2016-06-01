@@ -1,16 +1,27 @@
 
-<section>
-  <div id="splash-page" class="Container">
-    <div class="categories">
-      <div class="dropdown category-dropdown">
-        <ul>
+<div id="splash">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="row pull-right flash">
+      <% flash.each do |name, msg| %>
+        <% if name == "notice"%>
+          <strong id="flash-notice"> <%= name.capitalize %>: <%= msg %></strong>
+        <% elsif name == "error" || name == "alert" %>
+          <strong id="flash-error"> <%= name.capitalize %>: <%= msg %> </strong>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="container">
+      <h1 class="display-3">Welcome to Shurity</h1>
+      <p class="lead">Getting you what <strong><u>You</u></strong> want</p>
+      <p><h5>Select a Product Category</h5></p>
+
+      <div class="dropdown">
+        <ul class="list-group">
           <% @cat.each do |c| %>
-
-          <li><%= link_to c.name, new_answer_path(c.id) %></li>
-
-          <% end %>
+             <li><%= link_to c.name, new_answer_path(c.id) %></li>
+             <% end %>
         </ul>
       </div>
     </div>
   </div>
-</section>
+</div>

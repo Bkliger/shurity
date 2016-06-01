@@ -17,20 +17,13 @@
   }
 
   .container-fluid {
-    background-color: red;
+    background-color: black;
   }
 
   .navbar {
     height: 30px;
   }
 
-  .notification-dropdown {
-    margin-top: 10px;
-
-    button {
-      border: none;
-    }
-  }
 
   .navbar-collapse .navbar-right {
     font-family: 'News_706';
@@ -138,3 +131,32 @@
     }
 
   }
+
+  html,body { height: 100%; }
+#splash {
+  .jumbotron {
+    background: image-url('shurity-family-for-landing-page.jpg');
+    background-size:cover;
+    #flash-error {
+      color: red;
+    }
+    #flash-notice {
+      color: green;
+    }
+    .flash {
+      margin-right: 50px;
+    }
+    ul {
+      list-style: none;
+    }
+  }
+
+  .jumbotron .container {
+    height:450px;
+    color: white;
+  }
+  .dropdown {
+    color: black;
+
+  }
+}
