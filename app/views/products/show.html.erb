@@ -26,24 +26,41 @@
             <li>Speakerphone: Not available</li>
             <li>Sound quality is 54% of category</li>
           </ul>
-          Weight<h3><%= @product.weight %></h3>
-          Rechargeable?<h3><%= @product.rechargeable %></h3>
-          Solar?<h3><%= @product.solar %></h3>
-          Speakerphone?<h3><%= @product.speakerphone %></h3>
-          Radio?<h3><%= @product.radio %></h3>
-          <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" %>
-          <%= link_to 'Back', my_path %>
-
         </div>
       </div>
       <div class="row">
         <div class="col-xs-4 left">
+          <h3 class="display-4"><strong>Scorecard</strong></h3>
+          <ul>
+            <li>Overall Score: 88</li>
+            <li>Out of 1433 products</li>
+            <li>Sold by 6 Retailers</li>
+            <li>Price: 899 - within range</li>
+          </ul>
         </div>
         <div class="col-xs-4 left">
+            <h3 class="display-4">Swimmingly good sound!</h3>
+          <blockquote class="blockquote">
+            Fully waterproof (IPX7) and floatable—perfect for listening to music in the shower,
+            bath, pool, or hot tub 2 full-range drivers and passive radiator for stereo sound with rich bass. Built-in lithium-ion battery lasts up to 8 hours per charge Bluetooth® 4.0 technology with 30-foot (9m) wireless range.
+            Includes a hook for easy hanging in the shower
+          </blockquote>
+
         </div>
         <div class="col-xs-4 left">
+            <h4> Additional Information</h4>
+            <ul>
+              <li><a href="">7 best floating speakers</a></li>
+              <li><a href="">CNET Product review Link</a></li>
+              <li><a href="">Fan rating metrics dashboard</a></li>
+              <li><a href="">Bluetooth Speaker buying guide</a></li>
+              <li><a href="">Product Reviews</a></li>
+              <li><a href="">How does Bluetooth work?</a></li>
+            </ul>
         </div>
       </div>
     </div>
+    <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" %>
+    <%= link_to 'Back', my_path %>
   </section>
 </div>
