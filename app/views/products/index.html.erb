@@ -6,12 +6,17 @@
       <hr>
       <div>
         <table>
+          <tr>
+            <th><score-1>Score</score-1></th>
+          </tr>
         <% for product in @products do %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
-              <tr>
+              <tr class="table-borders">
+                <td><score-2><%= product.score%></score-2></td>
                 <td><%= image_tag(product.image_URL, :class => "prod-image-list")%></td>
                 <td><%= link_to product.name, my_path %></td>
               </tr>
+
           <% end %>
           </table>
         </div><br><br><br><br>
