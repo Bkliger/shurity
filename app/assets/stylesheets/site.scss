@@ -115,7 +115,6 @@
 .container-answers {
 	font-size: 12px;
   margin-top: 100px;
-  background-color: D5A2A2;
 
   .col-border {
     border-width: 5px;
@@ -180,7 +179,7 @@
   }
   ol {
     font-size: 14px;
-    padding: 0px;
+    padding-left: 20px;
   }
 
 }
@@ -238,4 +237,12 @@ html,body { height: 100%; }
   .lead {
     color: #8B8A93;
   }
+}
+
+.card {
+  background-color: #FFEFEF;
+  -webkit-box-shadow: 0 8px 6px -6px #70010e;
+  -moz-box-shadow: 0 8px 6px -6px #70010e;
+  box-shadow: 0 8px 6px -6px #70010e;
+  width: 200px
 }

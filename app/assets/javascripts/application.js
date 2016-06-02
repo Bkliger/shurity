@@ -53,5 +53,9 @@ $(document).ready(function() {
       $(this).data("value",$(this).data("slider-answer"));
     });
 
-
+    //on the new answer page, we need to get the value of the budget slider and put it into the input element to accumulate it for the fields_for
+        $(".ignore").click(function( event ) {
+          alert("Function Not Yet Implementated")
+          event.preventDefault();
+        });
 });

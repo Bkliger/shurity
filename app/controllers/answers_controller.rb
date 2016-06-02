@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
     user.save
     @user_id = User.last.id
     @answer_array = []
+    # this process loads up an array with an answer object for each question. The answer_text is empty.
     @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
     @questions.each do |q|
       @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
@@ -13,6 +14,8 @@ class AnswersController < ApplicationController
   end
 
   def create
+    # for each hash in the answers param, we create a new Answer record. answer_params is defined in the private
+    # section
     params["answers"].each do |answer|
     Answer.create(answer_params(answer))
    end
