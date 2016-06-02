@@ -55,3 +55,15 @@ battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bl
 
 Product.create(name: "Floating Bluetooth Speaker", desc: "",mpid: "a8a79575ac3a4b3db41d4f98a02be5e5",model_num: "MODB00VJYXFS0",range: "9 meters",weight: "15.2 ounces",output: "3 watts",rechargeable: "n", score: "88", batch_no: 1,
 battery: "8",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "7",dust_ip: "",category_id: cat_1.id, image_URL: "http://www.brookstone.com/dis/dw/image/v2/AAYH_PRD/on/demandware.static/-/Sites-itemmaster_Brookstone/default/dw1a84c23a/hi-res/994080p.jpg?sw=500",)
+
+Product.create(name: "Bang & Olufsen Natural BeoPlay A2", desc: "",mpid: "c05a2330bab777a39e04d3c75883b8f8",model_num: "1290963",range: "10",weight: "2.5 lbs",output: "15 watts",rechargeable: "y", score: "88", batch_no: 2,
+battery: "24",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "4",radio: "n",waterproof_ip: "0",dust_ip: "2",category_id: cat_1.id, image_URL: "https://i.ytimg.com/vi/jzcc5MVBesU/maxresdefault.jpg",)
+
+Product.create(name: "Bose® SoundLink® III | Portable Bluetooth Speaker", desc: "",mpid: "6f089198db16d8a52a97b9d3c1e6db86",model_num: "B00OD5BMM8",range: "10",weight: "3 lbs",output: "18 watts",rechargeable: "y", score: "86", batch_no: 2,
+battery: "14",solar: "n",charge_time: "3",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "4",radio: "n",waterproof_ip: "0",dust_ip: "0",category_id: cat_1.id, image_URL: "https://images-na.ssl-images-amazon.com/images/G/01/aplus/detail-page/bose_soundlinkiii_hero.jpg",)
+
+Product.create(name: "Marshall Audio Stockwell Portable Bluetooth Speaker", desc: "",mpid: "5497f2972831bee8d5e4b1a71b94ce95",model_num: "9SIA1J23R23527",range: "10",weight: "1.2 kg",output: "27 watts",rechargeable: "y", score: "89", batch_no: 2,
+battery: "25",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "4",radio: "n",waterproof_ip: "0",dust_ip: "0",category_id: cat_1.id, image_URL: "http://www.bhphotovideo.com/images/images2500x2500/marshall_audio_04091451_stockwell_speaker_with_case_1182314.jpg",)
+
+Product.create(name: "RIVA Turbo X", desc: "",mpid: "1509f89e1600174a6bdc66a2b2ab7441",model_num: "9SIA1J23R23527",range: "10",weight: "3 lbs",output: "45 watts",rechargeable: "y", score: "92", batch_no: 2,
+battery: "26",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "4",radio: "n",waterproof_ip: "2",dust_ip: "2",category_id: cat_1.id, image_URL: "http://theshownewport.com/wp-content/uploads/2015/05/Riva-Turbo-black-angle-top.jpeg",)
