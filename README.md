@@ -31,3 +31,13 @@ Here is a typical params[:answer]:
 * force users to log in after a certain point in the process
 
 * use an API call to a site like Indix to retrieve retailer information on a selected item
+
+
+##User Stories
+
+Shurity User Stories* A user goes the the Shurity landing page and selects a Bluetooth Speaker product category. They are taken to a page with questions that will narrow down the requirements for the that product.* The user answers the questions. None are required. The user then presses the Save Answers button and is taken to the Product Suggestions page. There would normally be a recommendation engine that takes the answers to the questions and the preference rankings and produces ranked product suggestions. This app will simulate this.* The user can click a Detailed Listing button and see a detailed reason why this was recommended.
+
+* A user can return to the product suggestion list* The user can click on the Adjust your Product Preference Answers button and go to the Adjust Your Product Preferences page.* The user can change their answers. The user then presses the Update Answers button and is taken to the Product Suggestions page – this time with different suggestions.
+
+##Hosted Address
+https://shurity.herokuapp.com/

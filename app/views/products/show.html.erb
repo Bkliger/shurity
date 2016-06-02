@@ -13,8 +13,8 @@
         </div>
         <div class="col-xs-8">
           <h3 class="display-4"><%= @product.name %> </h3>
-          <h4> Why this product fits for you </h4>
-          <t1> Positive Factors:</t1>
+          <h4> <strong>Why this product fits for you </strong></h4>
+          <t1> <strong>Positive Factors:</strong></t1>
           <ul>
             <li>WaterProof - This speaker has a Water IP rating of 7</li>
             <li>Device buttons</li>
@@ -22,6 +22,7 @@
             <li>Portability: Speaker is lightweight and 92% best in category</li>
             <li>This product is within your budget</li>
           </ul>
+          <t1> <strong>Negative Factors:</strong></t1>
           <ul>
             <li>Speakerphone: Not available</li>
             <li>Sound quality is 54% of category</li>
@@ -30,37 +31,47 @@
       </div>
       <div class="row">
         <div class="col-xs-4 left">
-          <h3 class="display-4"><strong>Scorecard</strong></h3>
-          <ul>
-            <li>Overall Score: 88</li>
-            <li>Out of 1433 products</li>
-            <li>Sold by 6 Retailers</li>
-            <li>Price: 899 - within range</li>
-          </ul>
+          <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">Scorecard</h4>
+                <ul class="card-text">
+                  <li>Overall Score: <strong>88</strong></li>
+                  <li>Out of 1433 products</li>
+                  <li>Sold by 6 Retailers</li>
+                  <li>Price: 899 - within range</li>
+                </ul>
+              </div>
+          </div>
         </div>
         <div class="col-xs-4 left">
-            <h3 class="display-4">Swimmingly good sound!</h3>
-          <blockquote class="blockquote">
-            Fully waterproof (IPX7) and floatable—perfect for listening to music in the shower,
-            bath, pool, or hot tub 2 full-range drivers and passive radiator for stereo sound with rich bass. Built-in lithium-ion battery lasts up to 8 hours per charge Bluetooth® 4.0 technology with 30-foot (9m) wireless range.
-            Includes a hook for easy hanging in the shower
-          </blockquote>
+          <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">Swimmingly good sound!</h4>
+                <p class="card-text">Fully waterproof (IPX7) and floatable—perfect for listening to music in the shower,
+                bath, pool, or hot tub 2 full-range drivers and passive radiator for stereo sound with rich bass. Built-in lithium-ion battery lasts up to 8 hours per charge Bluetooth® 4.0 technology with 30-foot (9m) wireless range.
+                Includes a hook for easy hanging in the shower.</p>
+              </div>
+          </div>
+        </div>
 
-        </div>
         <div class="col-xs-4 left">
-            <h4> Additional Information</h4>
-            <ul>
-              <li><a href="">7 best floating speakers</a></li>
-              <li><a href="">CNET Product review Link</a></li>
-              <li><a href="">Fan rating metrics dashboard</a></li>
-              <li><a href="">Bluetooth Speaker buying guide</a></li>
-              <li><a href="">Product Reviews</a></li>
-              <li><a href="">How does Bluetooth work?</a></li>
-            </ul>
+          <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">Additional Information</h4>
+                <ul class="card-text">
+                  <li><a href="">7 best floating speakers</a></li>
+                  <li><a href="">CNET Product review Link</a></li>
+                  <li><a href="">Fan rating metrics dashboard</a></li>
+                  <li><a href="">Bluetooth Speaker buying guide</a></li>
+                  <li><a href="">Product Reviews</a></li>
+                  <li><a href="">How does Bluetooth work?</a></li>
+                </ul>
+              </div>
+          </div>
         </div>
       </div>
+      <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/1/index" %>
+      <%= link_to 'Return to Product Recommendation List', my_path, class: "btn-primary btn" %>
     </div>
-    <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/1/index" %>
-    <%= link_to 'Return to Product Recommendation List', my_path, class: "btn-primary btn" %>
   </section>
 </div>
