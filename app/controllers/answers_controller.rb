@@ -6,10 +6,13 @@ class AnswersController < ApplicationController
     @user_id = User.last.id
     @answer_array = []
     # this process loads up an array with an answer object for each question. The answer_text is empty.
-    @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
-    @questions.each do |q|
-      @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
-
+    if Category.exists?(params[:cat_id]) #this protects the route if a user changes the category id in the route.
+      @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
+      @questions.each do |q|
+        @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
+      end
+    else
+      redirect_to root_path
     end
   end
 
@@ -17,16 +20,16 @@ class AnswersController < ApplicationController
     # for each hash in the answers param, we create a new Answer record. answer_params is defined in the private
     # section
     params["answers"].each do |answer|
-    Answer.create(answer_params(answer))
-   end
-   last_answer = Answer.last
+      Answer.create(answer_params(answer))
+    end
+    last_answer = Answer.last #in order to get the correct category and user id, I cheat and read the last answer record that was just created.
     my_path = "/categories/" + last_answer.category_id.to_s + "/users/" + last_answer.user_id.to_s + "/products/1/index"
     redirect_to my_path
-
   end
 
   def edit
-
+        # this process loads up an array with an answer object for each question. The answer_text is not empty and the key difference is that we put the
+        # answer_id in a column called stored_answer_id. If the answer_id is put in the id field, the fields_for will not work.
     answers = Answer.where("user_id = ?",params[:user_id]).order(:question_id)
       @update_answer_array = []
     answers.each do |a|

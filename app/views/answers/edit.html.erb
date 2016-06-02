@@ -8,9 +8,9 @@
     <div class="container-small">
 
       <div class="row">
-            <div class="col-xs-1">
+            <div class="col-xs-2">
             </div>
-            <div class="col-xs-6 question">
+            <div class="col-xs-5 question">
               <%= form_tag('/answers/update', method: :put)  do %>
                 <% @update_answer_array.each do |answer| %>
                   <%= fields_for 'answers[]', answer do |p| %>
@@ -23,6 +23,7 @@
                           <div class="answer-field">
                             <input type="hidden" id="slider_id" name="answers[][answer_text]" value="<%=answer.answer_text%>"/>
                           </div>
+                          <!-- the true answer_id is stored here -->
                           <div class="answer-field">
                                <%= p.hidden_field :stored_answer_id %>
                           </div>
@@ -57,7 +58,7 @@
                              />
 
                            </div>
-
+                           <!-- the true answer_id is stored here -->
                            <div class="answer-field">
                              <%= p.hidden_field :stored_answer_id %>
                            </div>
@@ -91,6 +92,7 @@
                                 <% end %>
                               </select>
                             </div>
+                                <!-- the true answer_id is stored here -->
                             <div class="answer-field">
                                  <%= p.hidden_field :stored_answer_id %>
                             </div>
