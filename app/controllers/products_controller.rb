@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.where("batch_no = ?",params[:batch_no]).order(score: :desc)
   end
 
   def show

@@ -1,20 +1,26 @@
 <section>
-  <div id="postsindex">
+  <div id="product-index">
     <div class="container">
+      <br>
       <h1>Your Product Suggestion List</h1>
       <hr>
-      <div id="modal-window" class="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+      <div>
+        <table>
+          <tr>
+            <th><score-1>Score</score-1></th>
+          </tr>
         <% for product in @products do %>
-
-            <div>
-              <%= product.name %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
-              <%= link_to 'Product Details', my_path %>
-
-            </div>
+              <tr class="table-borders">
+                <td><score-2><%= product.score%></score-2></td>
+                <td><%= image_tag(product.image_URL, :class => "prod-image-list")%></td>
+                <td><%= link_to product.name, my_path %></td>
+              </tr>
 
           <% end %>
-        <%= link_to "Adjust your Product Preference Answers",  edit_answers_path(params[:user_id])%>
+          </table>
+        </div><br><br>
+        <%= link_to "Adjust your Product Preference Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn-lg"%>
     </div>
   </div>
 </section>

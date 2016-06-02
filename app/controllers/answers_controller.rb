@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
     Answer.create(answer_params(answer))
    end
    last_answer = Answer.last
-    my_path = "/categories/" + last_answer.category_id.to_s + "/users/" + last_answer.user_id.to_s + "/products"
+    my_path = "/categories/" + last_answer.category_id.to_s + "/users/" + last_answer.user_id.to_s + "/products/1/index"
     redirect_to my_path
 
   end
@@ -39,7 +39,10 @@ class AnswersController < ApplicationController
         answer_obj.update(answer)
       end
     end
-   redirect_to root_path
+    last_answer = Answer.last
+    my_path = "/categories/" + last_answer.category_id.to_s + "/users/" + last_answer.user_id.to_s + "/products/2/index"
+    # binding.pry
+    redirect_to my_path
 
   end
 

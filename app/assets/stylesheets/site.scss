@@ -77,15 +77,32 @@
 
   }
 
+  ul {
+    list-style: none;
+    padding: 0px
+  }
 
+  .blockquote {
+    font-size: 10px
 
-
-
+  }
 }
 
-#splash-page{
-  .categories {
-    margin-top: 100px;
+#product-index {
+  .prod-image-list{
+    width: 100px
+
+  }
+  score-1 {
+    font-size: 24px;
+  }
+  score-2 {
+    font-size: 28px;
+  }
+
+  .table-borders {
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
 
   }
 }
@@ -98,20 +115,21 @@
 .container-answers {
 	font-size: 12px;
   margin-top: 100px;
+  background-color: D5A2A2;
 
   .col-border {
     border-width: 5px;
     border-style: ridge;
   }
 	.question-text{
-	  font-size: 12px;
+	  font-size: 14px;
 	  color: black;
 		width: 500px;
 	}
 
 	.reg-slider{
 	  color: red;
-	  font-size: 7px;
+	  font-size: 14px;
 	  width: 250px;
 		float: left;
 		margin: 10px;
@@ -134,14 +152,36 @@
 		color: black;
 		float: left;
 		width: 300px;
+    padding-top: 5px;
 
 	}
 	.budget-slider{
-		font-size: 10px;
+		font-size: 12px;
 		color: black;
 		float: left;
-				width: 300px;
+		width: 300px;
 	}
+
+  h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "PDF_in_Text";
+    margin-top: 0px;
+
+  }
+
+  h4 {
+    font-size: 18px;
+    text-align: left;
+    margin-top: 10px;
+    padding: 0px
+
+  }
+  ol {
+    font-size: 14px;
+    padding: 0px;
+  }
 
 }
 
@@ -164,7 +204,7 @@
 
   }
 
-  html,body { height: 100%; }
+html,body { height: 100%; }
 
 #splash {
   .jumbotron {
@@ -191,5 +231,11 @@
   .dropdown {
     color: black;
 
+  }
+  h5 {
+    color: #111022;
+  }
+  .lead {
+    color: #8B8A93;
   }
 }
