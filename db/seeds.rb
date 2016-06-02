@@ -18,13 +18,13 @@ cat_1 = Category.create(name: 'Bluetooth Speaker')
 Category.create(name: 'Over-Ear Headphones')
 Category.create(name: 'Home Theater Audio')
 
-question_1 = Question.create(category_id: cat_1.id, text: 'Do the speakers need to be waterproof?', presentation_type: '1-reg-slider')
-question_2 = Question.create(category_id: cat_1.id, text: 'Is portability important?', presentation_type: '1-reg-slider')
-question_3 = Question.create(category_id: cat_1.id, text: 'How important is sound quality to you?', presentation_type: '1-reg-slider')
-question_5 = Question.create(category_id: cat_1.id, text: 'How important is durability?', presentation_type: '1-reg-slider')
-question_7 = Question.create(category_id: cat_1.id, text: 'Is Volume important?', presentation_type: '1-reg-slider')
-question_8 = Question.create(category_id: cat_1.id, text: 'Battery Duration', presentation_type: '1-reg-slider')
-question_9 = Question.create(category_id: cat_1.id, text: 'What is your maximum budget?', presentation_type: '2-slider')
+Question.create(category_id: cat_1.id, text: 'Do the speakers need to be waterproof?', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'Is portability important?', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'How important is sound quality to you?', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'How important is durability?', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'Is Volume important?', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'Battery Duration', presentation_type: '1-reg-slider')
+Question.create(category_id: cat_1.id, text: 'What is your maximum budget?', presentation_type: '2-slider')
 question_10 = Question.create(category_id: cat_1.id, text: 'Color', presentation_type: '3-select')
 question_4 = Question.create(category_id: cat_1.id, text: 'Speakerphone capable?', presentation_type: '3-select')
 question_6 = Question.create(category_id: cat_1.id, text: 'Does the sound need to go in all directions?', presentation_type: '3-select')
@@ -49,7 +49,7 @@ battery: "6",solar: "n",charge_time: "3 hrs",remote_buttons: "",speakerphone: ""
 
 Product.create(name: "Portable Waterproof Wireless Bluetooth adsorbable Mini WIFI Speaker For SHOWER POOL Handsfree", desc: "",mpid: "b79f5686211dfb876fc283b7340e1944",model_num: "spea-32",range: "10 meters",weight: "185 grams",output: "3 watts",rechargeable: "y", score: "84", batch_no: 1,
 battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1.id, image_URL: "http://g03.a.alicdn.com/kf/HTB16EOYJpXXXXanXpXXq6xXFXXXw/Portable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping.jpg",)
-
+ra
 Product.create(name: "Waterproof Bluetooth Speaker with Pool Floaty Shower Wall Attachment", desc: "",mpid: "7cbb739ce772df5194efddae029fc3ce",model_num: "MODB00VJYXFS0",range: "10 meters",weight: "3.6 lbs",output: "4 watts",rechargeable: "y", score: "62", batch_no: 1,
 battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1.id, image_URL: "http://ecx.images-amazon.com/images/I/51EDvMzypyL._SX425_.jpg",)
 

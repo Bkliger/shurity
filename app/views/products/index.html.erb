@@ -8,6 +8,7 @@
         <table>
           <tr>
             <th><score-1>Score</score-1></th>
+            <%= link_to "Retailers", class: "btn-primary" %>
           </tr>
         <% for product in @products do %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>

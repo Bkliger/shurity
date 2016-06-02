@@ -7,18 +7,21 @@
     </div>
     <div class="container-small">
       <div class="row">
-
             <div class="col-xs-1">
             </div>
             <div class="col-xs-6 question">
               <%= form_tag "/answers" do %>
+            <!-- The @answer_array consists of a new answer object for each question -->
                 <% @answer_array.each do |answer| %>
+        <!-- the fields_for instructs the form to put all input fields into the array answers[]. This array will have multiple
+      hashes with the answer_text, category_id, user_id and question_id-->
                   <%= fields_for 'answers[]', answer do |p| %>
                     <% if answer.question.presentation_type == "2-slider" %>
                         <div class="budget-slider">
                           <div class="question-text">
                             <%=answer.question.text%>
                           </div>
+                <!--the budget slider is inserted through javascript on page load -->            
                           <div id="slider"></div>
                           <div class="answer-field">
                             <input type="hidden" id="slider_id" name="answers[][answer_text]"/>
