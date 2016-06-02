@@ -17,10 +17,12 @@
 
 //= require_tree .
 
-$(document).ready(function() {
-// $(document).on("page:load", function(){
 
-  // alert("executing")
+// turbo_links was removed because of a problem loading the page - it wouldn't load the sliders
+
+
+$(document).ready(function() {
+
     $('#slider').slider(
     {
     ticks: [0, 100, 200, 300, 400, 500],
@@ -30,35 +32,30 @@ $(document).ready(function() {
     provide: "slider"
     });
 
+// this sets the value of the budget slider when the app returns for edit
+    var sliderVal = $('#slider_id').val();
+    $('#slider').slider('setValue',parseInt(sliderVal));
 
-    var sliderVal = $('#slider_id').val()
-    $('#slider').slider('setValue',parseInt(sliderVal))
-    // $('#slider_id').val($('#slider').slider('getValue'));
-
+//on the new answer page, we need to get the value of the budget slider and put it into the input element to accumulate it for the fields_for
     $("#save-answers").click(function( event ) {
-
-
       $('#slider_id').val($('#slider').slider('getValue'));
-      // event.preventDefault();
     });
+
+//this does the same thing for the edit page
     $("#update-answers").click(function( event ) {
-
-      console.log($('#slider').slider('getValue'))
       $('#slider_id').val($('#slider').slider('getValue'));
-      console.log($('#slider_id').val())
       // event.preventDefault();
     });
 
+//for a regular slider, this moves the value of each slider into the input element
     $('.reg-slider-input').each(function() {
+      $(this).val($(this).data("slider-answer"));
+      $(this).data("value",$(this).data("slider-answer"));
+    });
 
-      $(this).val($(this).data("slider-answer"))
-      $(this).data("value",$(this).data("slider-answer"))
-      // console.log($(this).val())
-        // console.log($(this).data("value"))
-      // this.data-value(data-slider-answer)
-      // console.log($(this).data("slider-answer"))
-
-    })
-
-
+    //on the new answer page, we need to get the value of the budget slider and put it into the input element to accumulate it for the fields_for
+        $(".ignore").click(function( event ) {
+          alert("Function Not Yet Implementated")
+          event.preventDefault();
+        });
 });

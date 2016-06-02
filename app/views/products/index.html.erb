@@ -12,7 +12,7 @@
         <% for product in @products do %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
               <tr class="table-borders">
-                <td><score-2><%= product.score%></score-2></td>
+                <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", root_path, class: "btn-primary ignore" %></td>
                 <td><%= image_tag(product.image_URL, :class => "prod-image-list")%></td>
                 <td><%= link_to product.name, my_path %></td>
               </tr>
