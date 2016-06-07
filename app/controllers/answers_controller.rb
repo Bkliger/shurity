@@ -4,9 +4,10 @@ class AnswersController < ApplicationController
     user = User.new
     user.save
     @user_id = User.last.id
+    @category = Category.find(params[:cat_id])
     @answer_array = []
     # this process loads up an array with an answer object for each question. The answer_text is empty.
-    if Category.exists?(params[:cat_id]) #this protects the route if a user changes the category id in the route.
+    if @category != nil #this protects the route if a user changes the category id in the route.
       @questions = Category.find(params[:cat_id]).questions.order(:presentation_type)
       @questions.each do |q|
         @answer_array << Answer.new(category_id: params[:cat_id],user_id: @user_id, question_id: q.id)
@@ -30,8 +31,11 @@ class AnswersController < ApplicationController
   def edit
         # this process loads up an array with an answer object for each question. The answer_text is not empty and the key difference is that we put the
         # answer_id in a column called stored_answer_id. If the answer_id is put in the id field, the fields_for will not work.
+
     answers = Answer.where("user_id = ?",params[:user_id]).order(:question_id)
-      @update_answer_array = []
+    cat_id = answers.first.category.id
+    @category = Category.find(cat_id)
+    @update_answer_array = []
     answers.each do |a|
       check_answer = Answer.new(category_id: a.category_id, user_id: a.user_id, question_id: a.question_id, answer_text: a.answer_text, stored_answer_id: a.id)
       @update_answer_array << check_answer

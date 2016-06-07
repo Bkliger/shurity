@@ -1,19 +1,21 @@
 <section>
   <div id="product-index">
     <div class="container">
-      <br>
-      <h1>Your Product Suggestion List</h1>
+      <br><br><br><br><br>
+      <h1 class="display-3">Your Product Suggestion List</h1>
       <hr>
       <div>
+        <score-1>Score</score-1>
+        <p><score-3>Click on a product name to see product details and pricing</score-3></p>
         <table>
-          <tr>
-            <th><score-1>Score</score-1></th>
-          </tr>
+
         <% for product in @products do %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
               <tr class="table-borders">
                 <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", root_path, class: "btn-primary ignore" %></td>
-                <td><%= image_tag(product.image_URL, :class => "prod-image-list")%></td>
+                <td><%= link_to my_path do%>
+                      <%= image_tag(product.image_URL, :class => "prod-image-list") %>
+                    <% end %></td>
                 <td><%= link_to product.name, my_path %></td>
               </tr>
 
