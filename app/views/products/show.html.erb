@@ -72,6 +72,7 @@
       </div>
       <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/1/index" %>
       <%= link_to 'Return to Product Recommendation List', my_path, class: "btn-primary btn" %>
+        <%= link_to "Adjust your Product Preference Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn"%>
     </div>
   </section>
 </div>

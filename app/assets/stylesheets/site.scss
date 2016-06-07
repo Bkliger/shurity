@@ -100,6 +100,10 @@
     font-size: 28px;
   }
 
+  score-3 {
+    font-size: 12px;
+    color: red;
+  }
   .table-borders {
     border-top: 1pt solid black;
     border-bottom: 1pt solid black;
@@ -111,7 +115,7 @@
 #ex1Slider .slider-selection {
 	background: #BABABA;
 }
-
+// These are for the two answer pages
 .container-answers {
 	font-size: 12px;
   margin-top: 100px;
@@ -188,6 +192,12 @@
     -moz-box-shadow: 0 8px 6px -6px #70010e;
     box-shadow: 0 8px 6px -6px #70010e;
     width: 200px
+  }
+
+  .with_margin {
+    margin-top: 20px;
+    margin-left: 60px;
+    margin-right: 200px;
   }
 
 }
