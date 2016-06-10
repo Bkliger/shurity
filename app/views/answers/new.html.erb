@@ -1,5 +1,5 @@
 <section>
-  <div class="container-answers">
+  <div class="container-answers ">
     <div class="row">
       <div class="col-xs-12">
         <h1 class="display-3">Select your <%= @category.name %> Preferences</h1>
@@ -7,9 +7,7 @@
     </div>
     <div class="container-small">
       <div class="row">
-            <div class="col-xs-3">
-            </div>
-            <div class="col-xs-4 question">
+            <div class="col-sm-3 col-sm-offset-1 col-xs-offset-1 question">
               <%= form_tag "/answers" do %>
             <!-- The @answer_array consists of a new answer object for each question -->
                 <% @answer_array.each do |answer| %>
@@ -115,7 +113,7 @@
                   <%= submit_tag(value="Save Answers", id: "save-answers", class: "btn-primary btn with_margin") %>
               <% end %>
                   </div>
-                  <div class="col-xs-5">
+                  <div class="col-sm-2 col-sm-offset-1 col-xs-offset-1">
                     <div class="card">
                         <div class="card-block">
                           <h4 class="card-title">Preference Key</h4>
@@ -128,6 +126,8 @@
                           </ol>
                         </div>
                     </div>
+                  </div>
+                  <div class="col-sm-5">
                   </div>
 
       </div>

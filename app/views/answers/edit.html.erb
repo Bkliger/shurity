@@ -8,9 +8,7 @@
     <div class="container-small">
 
       <div class="row">
-            <div class="col-xs-2">
-            </div>
-            <div class="col-xs-5 question">
+            <div class="col-sm-3 col-sm-offset-1 col-xs-offset-1 question"">
               <%= form_tag('/answers/update', method: :put)  do %>
                 <% @update_answer_array.each do |answer| %>
                   <%= fields_for 'answers[]', answer do |p| %>
@@ -133,7 +131,7 @@
                   <% end %>
                       <%= submit_tag(value="Update Answers", id:"update-answers", class:"btn-primary btn with_margin") %>
               </div>
-              <div class="col-xs-5">
+              <div class="col-sm-2 col-sm-offset-1 col-xs-offset-1">
                 <div class="card">
                     <div class="card-block">
                       <h4 class="card-title">Preference Key</h4>
@@ -146,7 +144,8 @@
                       </ol>
                     </div>
                   </div>
-
+              </div>
+              <div class="col-sm-5">
               </div>
               <% end %>
       </div>
