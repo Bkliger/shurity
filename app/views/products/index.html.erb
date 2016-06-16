@@ -13,10 +13,15 @@
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
               <tr class="table-borders">
                 <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", root_path, class: "btn-primary ignore" %></td>
-                <td><%= link_to my_path do%>
-                      <%= image_tag(product.image_URL, :class => "prod-image-list") %>
-                    <% end %></td>
-                <td><%= link_to product.name, my_path %></td>
+                <% if product.block_1 == nil %>
+                  <td>  <img class="prod-image-list" src="<%=product.image_URL%>" alt="994080p"></td>
+                  <td><a href=""><%= product.name %></a></td>
+                <% else %>
+                  <td><%= link_to my_path do%>
+                        <%= image_tag(product.image_URL, :class => "prod-image-list") %>
+                      <% end %></td>
+                  <td><%= link_to product.name, my_path %></td>
+                <% end %>
               </tr>
 
           <% end %>
