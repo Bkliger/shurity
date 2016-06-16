@@ -38,6 +38,7 @@ Option.create(question_id: question_4.id, opt_value: 'No')
 Option.create(question_id: question_6.id, opt_value: 'Yes')
 Option.create(question_id: question_6.id, opt_value: 'No')
 
+
 Product.create(name: "Ivation Waterproof Bluetooth Swimming", desc: "Pool Floating Speaker",mpid: "5ccf829d285b049dc184a8c466d05b74", range: "10 meters",weight: "2 lbs",rechargeable: "n", output: "4 watts",
 battery: "5",solar: "n",category_id: cat_1.id, image_URL: "http://cdnl.ritzcamera.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/I/V/IVSVPSBTW_14058.jpg",score: "75", batch_no: 1)
 
