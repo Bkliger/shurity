@@ -8,15 +8,9 @@
   .dropdown-toggle {
     margin: 15px;
     padding-top: 0px;
-    padding-bottom: 0px
-  }
-
-  a {
-    .dropdown-toggle {
-      background-color: red;
-
-
-    }
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px
   }
 
   .open {
@@ -305,4 +299,35 @@ html,body { height: 100%; }
   -moz-box-shadow: 0 8px 6px -6px #70010e;
   box-shadow: 0 8px 6px -6px #70010e;
   width: 310px
+}
+.background {
+  background: url("signin-background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+  padding-top: 30px;
+  color: white;
+
+  .field {
+      color: black;
+    }
+  label {
+    color: white;
+  }
+}
+
+.devise-links {
+  a {
+   color: white;
+  }
+
+}
+
+.white {
+  color: white;
 }

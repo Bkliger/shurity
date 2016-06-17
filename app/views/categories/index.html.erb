@@ -18,9 +18,16 @@
 
       <div class="dropdown">
         <ul class="list-group">
-          <% @cat.each do |c| %>
-             <li><%= link_to c.name, new_answer_path(c.id) %></li>
-             <% end %>
+          <%if user_signed_in? %>
+            <% @cat.each do |c| %>
+               <li><%= link_to c.name, new_answer_path(c.id) %></li>
+               <% end %>
+          <% else %>
+            <% @cat.each do |c| %>
+               <li><%= c.name%></li>
+            <% end %>
+          <% end %>
+
         </ul>
       </div>
     </div>
