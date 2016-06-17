@@ -263,6 +263,20 @@ html,body { height: 100%; }
   .jumbotron {
     background: image-url('shurity-family-for-landing-page.jpg');
     background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100vh;
+    padding-top: 30px;
+    color: white;
+    margin-top: 20px;
+
+
+
+
     #flash-error {
       color: red;
     }
@@ -330,4 +344,32 @@ html,body { height: 100%; }
 
 .white {
   color: white;
+}
+
+.user-edit {
+  margin-top: 90px;
+  .row {
+    // border-style: ridge;
+    border-width: .3px;
+    // -webkit-box-shadow: 0 15px 6px -6px #70010e;
+    // -moz-box-shadow: 0 15px 6px -6px #70010e;
+    // box-shadow: 0 15px 6px -6px #70010e;
+  }
+
+  hr {
+  align-self: center;
+  border: 0;
+  height: 5px;
+  // background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    color: white;
+  }
+
 }

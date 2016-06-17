@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   get "/categories/:cat_id/users/:user_id/products/:batch_no/index", to: "products#index",  as: "products"
   get "/categories/:cat_id/users/:user_id/products/:id", to: "products#show", as: "product"
 
+  # get "/users/:user_id", to:"users#show", as: "user"
+  get "/users/:user_id/edit", to:"users#edit", as: "edit_user"
+  patch "/users/:user_id", to:"users#update"
+  get "users", to: "users#index", as: "users"
+
+
   #-------------catch all--------------------------------------------------------------#
     get "*any", to: redirect('/404'), via: :all
 

@@ -1,0 +1,23 @@
+<section>
+  <div id="users-index">
+    <div class="container">
+      <br><br><br><br><br>
+      <h1 class="display-3">Users</h1>
+      <hr>
+      <div>
+        <ul>
+        <% @users.each do |u| %>
+            <% if u.first_name === nil %>
+              <li><%= link_to "blank", edit_user_path(u.id) %></li>
+            <% else %>
+              <li><%= link_to u.first_name + " " + u.last_name + " " + u.email, edit_user_path(u.id) %></li>
+            <% end %>
+
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- <li><!%= link_to current_user.first_name.capitalize + "'s Profile", user_path(current_user.id) %></li> -->
