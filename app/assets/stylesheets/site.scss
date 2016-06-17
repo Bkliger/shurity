@@ -2,13 +2,52 @@
 #mainNav {
 
   .navbar-toggle {
-    // margin-top: 20px;
+    margin-top: 20px;
   }
 
+  .dropdown-toggle {
+    margin: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px
+  }
+
+  a {
+    .dropdown-toggle {
+      background-color: red;
+
+
+    }
+  }
+
+  .open {
+    color: black;
+    background-color: black;
+
+  }
+  .dropdown-menu  {
+      a {color: white;
+      background-color: black;
+      text-align: right;
+      }
+    padding-top: 0px;
+    padding-bottom: 0px
+  }
   a {
     color: white;
     font-weight: 450;
     font-size: 14px;
+  }
+
+  li {
+    color: black;
+  }
+  .fa {
+    font-size: 23px;
+    margin-top: 8px;
+  }
+
+  .caret {
+    border-width: 7px;
   }
 
   .container-fluid {
@@ -30,7 +69,7 @@
 
     a:hover,
     a:focus {
-      color: green;
+      color: white;
       font-weight: bold;
       font-size: 17px;
       font-color: black;
@@ -39,9 +78,9 @@
     .brand {
     position: fixed;
     width: 90px;
-    top: 0px;
+    top: -2px;
     left: 15px;
-  }
+    }
 
   }
 
