@@ -1,0 +1,22 @@
+<section>
+  <div id="users-index">
+    <div class="container-fluid">
+      <br><br><br><br><br>
+      <div class="col-sm-5">
+        <h1 class="display-3">Users</h1>
+        <hr>
+          <% @users.each do |u| %>
+              <% if u.first_name === nil %>
+                <div class="row index-list">
+                <%= link_to "blank", edit_user_path(u.id) %>
+                </div>
+              <% else %>
+                <div class="row index-list">
+                <%= link_to u.first_name + " " + u.last_name + " " + u.email, edit_user_path(u.id) %>
+                </div>
+              <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,13 +2,47 @@
 #mainNav {
 
   .navbar-toggle {
-    // margin-top: 20px;
+    margin-top: 20px;
   }
 
+  .dropdown-toggle {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    padding-right: 15px;
+    padding-left: 15px
+  }
+
+  .open {
+    color: black;
+    background-color: black;
+
+  }
+  .dropdown-menu  {
+      a {color: white;
+      background-color: black;
+      text-align: right;
+      }
+    padding-top: 0px;
+    padding-bottom: 0px
+  }
   a {
     color: white;
     font-weight: 450;
     font-size: 14px;
+    background-color: black;
+    // width: 120px;
+  }
+
+  li {
+    color: black;
+  }
+  .fa {
+    font-size: 23px;
+    margin-top: 8px;
+  }
+
+  .caret {
+    border-width: 7px;
   }
 
   .container-fluid {
@@ -30,7 +64,7 @@
 
     a:hover,
     a:focus {
-      color: green;
+      color: white;
       font-weight: bold;
       font-size: 17px;
       font-color: black;
@@ -39,9 +73,9 @@
     .brand {
     position: fixed;
     width: 90px;
-    top: 0px;
+    top: -10px;
     left: 15px;
-  }
+    }
 
   }
 
@@ -230,14 +264,29 @@ html,body { height: 100%; }
   .jumbotron {
     background: image-url('shurity-family-for-landing-page.jpg');
     background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100vh;
+    padding-top: 30px;
+    color: white;
+    margin-top: 20px;
+    margin-right: -20px;
+    margin-left: -10px;
+
     #flash-error {
       color: red;
     }
     #flash-notice {
-      color: green;
+      color: white;
     }
+
     .flash {
       margin-right: 50px;
+      margin-top: 50px
     }
     ul {
       list-style: none;
@@ -267,3 +316,81 @@ html,body { height: 100%; }
   box-shadow: 0 8px 6px -6px #70010e;
   width: 310px
 }
+.background {
+  background: url("signin-background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100vh;
+  padding-top: 30px;
+  color: white;
+  margin-right: -20px;
+  margin-left: -10px;
+
+  .field {
+      color: black;
+    }
+  label {
+    color: white;
+  }
+}
+
+.devise-links {
+  a {
+   color: white;
+  }
+
+}
+
+.white {
+  color: white;
+}
+
+.user-edit {
+  margin-top: 90px;
+  .row {
+    // border-style: ridge;
+    border-width: .3px;
+    // -webkit-box-shadow: 0 15px 6px -6px #70010e;
+    // -moz-box-shadow: 0 15px 6px -6px #70010e;
+    // box-shadow: 0 15px 6px -6px #70010e;
+  }
+
+  hr {
+  align-self: center;
+  border: 0;
+  height: 5px;
+  // background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  a {
+    color: white;
+  }
+
+}
+
+#users-index {
+  .index-list {
+    border-bottom: solid;
+    border-top: solid;
+    border-width: 2px;
+    font-size: 20px;
+    margin-top: 10px;
+
+  }
+}
+
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }

@@ -147,7 +147,7 @@ block_2: "<li>Overall Score: <strong>97</strong></li>
 <li>Out of 413 products</li>
 <li>Sold by 3 Retailers</li>
 <li>Price: 201 - within range</li>",
-block_3: 'h4 class="card-title">This speaker plays at 11!</h4>
+block_3: '<h4 class="card-title">This speaker plays at 11!</h4>
 <p class="card-text">The RIVA Turbo X features three proprietary speakers positioned that mix in-air to create virtual left and right speakers.
 The system delivers clean sound with plenty of bass. Activate the Trillium™ Surround and experience immersive surround sound, great for movies & games.
 With 45 watts of power the Turbo X delivers, especially at higher volumes.</p>')

@@ -1,9 +1,7 @@
 class AnswersController < ApplicationController
   ActionController::Parameters.permit_all_parameters = true
   def new
-    user = User.new
-    user.save
-    @user_id = User.last.id
+    @user_id = current_user.id
     @category = Category.find(params[:cat_id])
     @answer_array = []
     # this process loads up an array with an answer object for each question. The answer_text is empty.
