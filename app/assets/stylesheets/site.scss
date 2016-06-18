@@ -123,6 +123,18 @@
     font-size: 10px
 
   }
+  .card {
+    background-color: #DFDFDF;
+    -webkit-box-shadow: 0 8px 6px -6px #70010e;
+    -moz-box-shadow: 0 8px 6px -6px #70010e;
+    box-shadow: 0 8px 6px -6px #70010e;
+    width: 190px
+  }
+  .extra-width{
+
+    width: 300px;
+  }
+
 }
 
 #product-index {
@@ -275,7 +287,7 @@ html,body { height: 100%; }
     color: white;
     margin-top: 20px;
     margin-right: -20px;
-    margin-left: -10px;
+    margin-left: -20px;
 
     #flash-error {
       color: red;
@@ -329,7 +341,7 @@ html,body { height: 100%; }
   padding-top: 30px;
   color: white;
   margin-right: -20px;
-  margin-left: -10px;
+  margin-left: -20px;
 
   .field {
       color: black;
