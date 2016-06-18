@@ -94,6 +94,14 @@
 
 #product-show {
 
+  .col-centered {
+      display:inline-block;
+      /* reset the text-align */
+      text-align:left;
+      /* inline-block space fix */
+      margin-right:-4px;
+      width: 1500px;
+  }
   .center{
     text-align: center;
   }
@@ -128,13 +136,24 @@
     -webkit-box-shadow: 0 8px 6px -6px #70010e;
     -moz-box-shadow: 0 8px 6px -6px #70010e;
     box-shadow: 0 8px 6px -6px #70010e;
-    width: 190px
+    width: 100%;
+    padding: 5px;
   }
   .extra-width{
 
     width: 300px;
   }
-
+  #large-show-container {
+    width: auto;
+  }
+  .centerBlock {
+                display: table;
+                margin: 0 auto;
+            }
+  // // .variable-width {
+  // //   width: 100%;
+  //
+  // }
 }
 
 #product-index {

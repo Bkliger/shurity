@@ -7,6 +7,7 @@
     <div id="large-show-container" class="container">
 
       <div class="row">
+        <div class="centerBlock">
         <div class="col-sm-5 left">
           <!-- <img src="<!%=@product.image_URL%>" style="width: 90%; height: 90%" alt="MDN"> -->
             <%= image_tag(@product.image_URL, :class => "prod-image")%>
@@ -18,7 +19,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 left">
+        <div class="col-sm-3 center">
           <div class="card">
               <div class="card-block">
                 <h4 class="card-title">Scorecard</h4>
@@ -28,14 +29,13 @@
               </div>
           </div>
         </div>
-        <div class="col-sm-5 left">
-          <div class="card extra-width">
+        <div class="col-sm-5">
+          <div class="card">
               <div class="card-block">
                   <%= raw @product.block_3 %>
               </div>
           </div>
         </div>
-
         <div class="col-sm-4 left">
           <div class="card">
               <div class="card-block">
