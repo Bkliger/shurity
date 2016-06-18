@@ -6,11 +6,10 @@
   }
 
   .dropdown-toggle {
-    margin: 15px;
-    padding-top: 0px;
+    padding-top: 15px;
     padding-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px
+    padding-right: 15px;
+    padding-left: 15px
   }
 
   .open {
@@ -30,6 +29,8 @@
     color: white;
     font-weight: 450;
     font-size: 14px;
+    background-color: black;
+    // width: 120px;
   }
 
   li {
@@ -72,7 +73,7 @@
     .brand {
     position: fixed;
     width: 90px;
-    top: -2px;
+    top: -10px;
     left: 15px;
     }
 
@@ -273,18 +274,19 @@ html,body { height: 100%; }
     padding-top: 30px;
     color: white;
     margin-top: 20px;
-
-
-
+    margin-right: -20px;
+    margin-left: -10px;
 
     #flash-error {
       color: red;
     }
     #flash-notice {
-      color: green;
+      color: white;
     }
+
     .flash {
       margin-right: 50px;
+      margin-top: 50px
     }
     ul {
       list-style: none;
@@ -326,6 +328,8 @@ html,body { height: 100%; }
   height:100vh;
   padding-top: 30px;
   color: white;
+  margin-right: -20px;
+  margin-left: -10px;
 
   .field {
       color: black;
@@ -373,3 +377,20 @@ html,body { height: 100%; }
   }
 
 }
+
+#users-index {
+  .index-list {
+    border-bottom: solid;
+    border-top: solid;
+    border-width: 2px;
+    font-size: 20px;
+    margin-top: 10px;
+
+  }
+}
+
+// * {
+//   background: #000 !important;
+//   color: #0f0 !important;
+//   outline: solid #f00 1px !important;
+// }

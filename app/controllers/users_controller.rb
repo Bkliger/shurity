@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = U.find(params[:user_id])
     render :edit
 
   end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "Problem with user update"
     end
-    redirect_to edit_user_path
+    redirect_to users_path
 
   end
 
