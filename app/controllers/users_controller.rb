@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = U.find(params[:user_id])
+    @user = User.find(params[:user_id])
     render :edit
 
   end
