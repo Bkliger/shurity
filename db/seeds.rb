@@ -76,7 +76,7 @@ Product.create(name: "Waterproof Bluetooth Speaker with Pool Floaty Shower Wall 
 battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1.id, image_URL: "http://ecx.images-amazon.com/images/I/51EDvMzypyL._SX425_.jpg",)
 
 Product.create(name: "Floating Bluetooth Speaker", desc: "",mpid: "a8a79575ac3a4b3db41d4f98a02be5e5",model_num: "MODB00VJYXFS0",range: "9 meters",weight: "15.2 ounces",output: "3 watts",rechargeable: "n", score: "88", batch_no: 1,
-battery: "8",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "7",dust_ip: "",category_id: cat_1.id, image_URL: "http://www.brookstone.com/dis/dw/image/v2/AAYH_PRD/on/demandware.static/-/Sites-itemmaster_Brookstone/default/dw1a84c23a/hi-res/994080p.jpg?sw=500",
+battery: "8",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "7",dust_ip: "",category_id: cat_1.id, image_URL: "https://www.brookstone.com/dis/dw/image/v2/AAYH_PRD/on/demandware.static/-/Sites-itemmaster_Brookstone/default/dw1a84c23a/hi-res/994080p.jpg?sw=500",
 block_1: "<t1> <strong>Positive Factors:</strong></t1>
 <ul>
   <li>WaterProof - This speaker has a Water IP rating of 7</li>
