@@ -68,7 +68,7 @@ block_2: "<li>Overall Score: <strong>84</strong></li>
 <li>Out of 1433 products</li>
 <li>Sold by 5 Retailers</li>
 <li>Price: 322 - within range</li>",
-block_3: '<h4 class="card-title">Singing in the Rain</h4>
+block_3: '<h4 class="card-title">Singing in the Rain!</h4>
 <p class="card-text">Whether in the weather, the shower, poo or hot tub, this speaker will keep you singing.
 Surround sound for everyone in the area to listen to.</p>')
 
@@ -94,7 +94,7 @@ block_2: "  <li>Overall Score: <strong>88</strong></li>
                   <li>Out of 1433 products</li>
                   <li>Sold by 6 Retailers</li>
                   <li>Price: 899 - within range</li>",
-block_3: '<h4 class="card-title">Swimmingly good sound</h4>
+block_3: '<h4 class="card-title">Swimmingly good sound!</h4>
                 <p class="card-text">Fully waterproof (IPX7) and floatable—perfect for listening to music in the shower,
                 bath, pool, or hot tub 2 full-range drivers and passive radiator for stereo sound with rich bass. Built-in lithium-ion battery lasts up to 8 hours per charge Bluetooth® 4.0 technology with 30-foot (9m) wireless range.
                 Includes a hook for easy hanging in the shower.</p>')
@@ -122,7 +122,7 @@ block_2:"<li>Overall Score: <strong>89</strong></li>
 <li>Out of 413 products</li>
 <li>Sold by 2 Retailers</li>
 <li>Price: 128 - within range</li>",
-block_3: '<h4 class="card-title">Rock and Road</h4>
+block_3: '<h4 class="card-title">Rock and Road!</h4>
 <p class="card-text">Built for life on the road, the Stockwell is the smallest travel speaker made by Marshall today.
 This stereo speaker weighs just 1.20 kg, which means it’ll go wherever you want it to.
 Rechargeable batteries are built in, which give it 25 hours of playing time.
