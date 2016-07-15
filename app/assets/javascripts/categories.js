@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   $('#test-text').keyup(function(event) {
      if($('#test-text').val() != lastentry) {
+       console.log("last Entry", lastentry)
        $.get('/api/me', function getUserData(user) {
             $.ajax({
                 method: "GET",
@@ -19,10 +20,10 @@ $(document).ready(function() {
 
   });
   function updateUserSuccess(json) {
-    console.log(json)
+    // console.log(json)
   }
   function updateUserError(json) {
-    console.log("AJAX request failed")
+    // console.log("AJAX request failed")
   }
 
 

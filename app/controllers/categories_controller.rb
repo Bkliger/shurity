@@ -38,7 +38,13 @@ class CategoriesController < ApplicationController
   end
 
   def get_categories
-   @cat = Category.where("lower(name) LIKE ?", params[:catString].downcase + "%")
+# to handle the case where the user blanks out the search field
+    if params[:catString] == ""
+      query_param = "asdfgsdagadsg%"
+    else
+      query_param = params[:catString].downcase + "%"
+    end
+    @cat = Category.where("lower(name) LIKE ?", query_param)
     respond_to do |format|
       format.js
     end
