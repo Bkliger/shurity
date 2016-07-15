@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   root  to: "categories#index"
+  # route for category drop-down
+    get '/categories/get_categories', to: 'categories#get_categories', as:'get_categories'
+
   get "/categories/new", to:'categories#new', as: "new_category"
   post "categories", to:"categories#create"
   get "/categories/:id", to:'categories#show', as: 'category'
@@ -10,8 +13,6 @@ Rails.application.routes.draw do
   get '/categories/:id/edit', to: 'categories#edit', as: 'category_edit'
   patch '/categories/:id', to: 'categories#update'
   delete '/categories/:id', to: 'categories#destroy'
-# route for category drop-down
-  get '/categories/get_categories', to: 'categories#get_categories', as:'get_categories'
 
   get  "/categories/:cat_id/answers/new", to: 'answers#new',   as: "new_answer"
   post "/answers", to: 'answers#create'
@@ -27,6 +28,10 @@ Rails.application.routes.draw do
   get "/users/:user_id/edit", to:"users#edit", as: "edit_user"
   patch "/users/:user_id", to:"users#update"
   get "users", to: "users#index", as: "users"
+
+  # static page - about
+  get "pages/:page", to:"pages#show", as: "pages"
+
 
 
   #-------------catch all--------------------------------------------------------------#

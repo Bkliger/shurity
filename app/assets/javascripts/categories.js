@@ -16,6 +16,7 @@ $(document).ready(function() {
 
      }
      lastentry = $('#test-text').val()
+
   });
   function updateUserSuccess(json) {
     console.log(json)
@@ -23,4 +24,6 @@ $(document).ready(function() {
   function updateUserError(json) {
     console.log("AJAX request failed")
   }
+
+
 });

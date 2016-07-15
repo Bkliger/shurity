@@ -15,26 +15,27 @@
       <div class="col-lg-12">
         <h1 class="display-3">Welcome to Shurity</h1>
         <p class="lead">Getting you what <strong><em>You</em></strong> want</p>
-        <p><h5>Select a Product Category</h5></p>
-
-        <!-- testing -->
-        <div class="input-group-sm">
-              <label for="name">Test Text</label>
-              <input type="text" class="form-control" id="test-text" name="test-text" value="">
+        <%if user_signed_in? %>
+          <p><h4>What Product Are You Looking For?</h4</p>
+          <p><h5>Enter the first few letters.</h5</p><br></br>
+          <div class="col-lg-3" id="cat-dropdown">
+            <div class="row">
+              <input type="text" class="form-control" id="test-text" name="test-text" value=""></input>
+              <div id="cat-div">
+                <!-- this is where the dropdown is placed in javascript -->
+              </div>
             </div>
-        <div id="cat-div"> </div>
-<!-- end test -->
-        <div class="dropdown">
+
+          </div>
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: "btn btn-danger"%>
+
+            <%= link_to "Sign up", "/users/sign_up", class: "btn btn-danger"%><br>
+
+        <% end %>
+
+          <div class="dropdown">
           <ul class="list-group">
-            <%if user_signed_in? %>
-              <% @cat.each do |c| %>
-                 <li><%= link_to c.name, new_answer_path(c.id) %></li>
-                 <% end %>
-            <% else %>
-              <% @cat.each do |c| %>
-                 <li><%= c.name%></li>
-              <% end %>
-            <% end %>
 
           </ul>
         </div>

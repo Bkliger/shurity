@@ -2,32 +2,31 @@
   <div id="product-index">
     <div class="container">
       <br><br><br><br><br>
-      <h1 class="display-3">Your Product Suggestion List</h1>
+      <h1 class="display-3">Your Top Bluetooth Speaker Matches</h1>
       <hr>
       <div>
         <score-1>Score</score-1>
-        <p><score-3>Click on a product name to see product details and pricing</score-3></p>
-        <table>
+        <table id="prod-table">
 
         <% for product in @products do %>
             <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
               <tr class="table-borders">
                 <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", root_path, class: "btn-primary ignore" %></td>
                 <% if product.block_1 == nil %>
-                  <td>  <img class="prod-image-list" src="<%=product.image_URL%>" alt="994080p"></td>
-                  <td><a href=""><%= product.name %></a></td>
+                  <td class="table-space">  <img class="prod-image-list" src="<%=product.image_URL%>" alt="994080p"></td>
+                  <td class="table-space"><a href=""><%= product.name %></a></td>
                 <% else %>
-                  <td><%= link_to my_path do%>
+                  <td class="table-space"><%= link_to my_path do%>
                         <%= image_tag(product.image_URL, :class => "prod-image-list") %>
                       <% end %></td>
-                  <td><%= link_to product.name, my_path %></td>
+                  <td class="table-space"><%= link_to product.name, my_path %></td>
                 <% end %>
               </tr>
 
           <% end %>
           </table>
         </div><br><br>
-        <%= link_to "Adjust your Product Preference Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn-lg"%>
+        <%= link_to "<--Change My Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn-lg"%>
     </div>
   </div>
 </section>

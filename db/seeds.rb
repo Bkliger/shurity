@@ -17,6 +17,37 @@ User.destroy_all
 cat_1 = Category.create(name: 'Bluetooth Speaker')
 Category.create(name: 'Over-Ear Headphones')
 Category.create(name: 'Home Theater Audio')
+Category.create(name: 'Printer')
+Category.create(name: 'Microphone')
+Category.create(name: 'Television')
+Category.create(name: 'Streaming Device')
+Category.create(name: 'Point and Shoot Camera')
+Category.create(name: 'Desktop Speaker')
+Category.create(name: 'Router')
+Category.create(name: 'Thermostat')
+Category.create(name: 'Gaming System')
+Category.create(name: 'Clock Radio')
+Category.create(name: 'Remote Control')
+Category.create(name: 'SLR Camera')
+Category.create(name: 'Electronic Watch')
+Category.create(name: 'Fitness Tracker')
+Category.create(name: 'Stereo Equalizer')
+Category.create(name: 'DVD Player')
+Category.create(name: 'GPS')
+Category.create(name: 'Electric Shaver')
+Category.create(name: 'Noise Cancelling Headphones')
+Category.create(name: 'Blu Ray Player')
+Category.create(name: 'Scanner')
+Category.create(name: 'Mouse')
+Category.create(name: 'Projector')
+Category.create(name: 'Security Camera')
+Category.create(name: 'WebCam')
+Category.create(name: 'Bluetooth Headset')
+Category.create(name: 'Corder Headset')
+Category.create(name: 'Wireless Headset')
+
+
+
 
 Question.create(category_id: cat_1.id, text: 'Do the speakers need to be waterproof?', presentation_type: '1-reg-slider')
 Question.create(category_id: cat_1.id, text: 'Is portability important?', presentation_type: '1-reg-slider')
@@ -50,7 +81,7 @@ battery: "6",solar: "n",charge_time: "3 hrs",remote_buttons: "",speakerphone: ""
 
 Product.create(name: "Portable Waterproof Wireless Bluetooth adsorbable Mini WIFI Speaker For SHOWER POOL Handsfree", desc: "",mpid: "b79f5686211dfb876fc283b7340e1944",model_num: "spea-32",range: "10 meters",weight: "185 grams",output: "3 watts",rechargeable: "y", score: "84", batch_no: 1,
 battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1.id, image_URL: "http://g03.a.alicdn.com/kf/HTB16EOYJpXXXXanXpXXq6xXFXXXw/Portable-Waterproof-Wireless-Bluetooth-adsorbable-Mini-WIFI-Speaker-For-SHOWER-POOL-Handsfree-With-free-shipping.jpg",
-block_1: "<t1> <strong>Positive Factors:</strong></t1>
+block_1: "<t1> <strong>The Good:</strong></t1>
 <ul>
   <li>WaterProof - This speaker has a Water IP rating of 7</li>
   <li>Device buttons</li>
@@ -59,7 +90,7 @@ block_1: "<t1> <strong>Positive Factors:</strong></t1>
   <li>Speakerphone: Capable</li>
   <li>This product is within your budget</li>
 </ul>
-<t1> <strong>Negative Factors:</strong></t1>
+<t1> <strong>The Not So Good:</strong></t1>
 <ul>
   <li>3 Watts of output power – 27% for the category</li>
   <li>Sound quality is 59% of category</li>
@@ -77,7 +108,7 @@ battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bl
 
 Product.create(name: "Floating Bluetooth Speaker", desc: "",mpid: "a8a79575ac3a4b3db41d4f98a02be5e5",model_num: "MODB00VJYXFS0",range: "9 meters",weight: "15.2 ounces",output: "3 watts",rechargeable: "n", score: "88", batch_no: 1,
 battery: "8",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "7",dust_ip: "",category_id: cat_1.id, image_URL: "https://www.brookstone.com/dis/dw/image/v2/AAYH_PRD/on/demandware.static/-/Sites-itemmaster_Brookstone/default/dw1a84c23a/hi-res/994080p.jpg?sw=500",
-block_1: "<t1> <strong>Positive Factors:</strong></t1>
+block_1: "<t1> <strong>The Good:</strong></t1>
 <ul>
   <li>WaterProof - This speaker has a Water IP rating of 7</li>
   <li>Device buttons</li>
@@ -85,7 +116,7 @@ block_1: "<t1> <strong>Positive Factors:</strong></t1>
   <li>Portability: Speaker is lightweight and 92% best in category</li>
   <li>This product is within your budget</li>
 </ul>
-<t1> <strong>Negative Factors:</strong></t1>
+<t1> <strong>The Not So Good:</strong></t1>
 <ul>
   <li>Speakerphone: Not available</li>
   <li>Sound quality is 54% of category</li>
@@ -107,14 +138,14 @@ battery: "14",solar: "n",charge_time: "3",remote_buttons: "y",speakerphone: "n",
 
 Product.create(name: "Marshall Audio Stockwell Portable Bluetooth Speaker", desc: "",mpid: "5497f2972831bee8d5e4b1a71b94ce95",model_num: "9SIA1J23R23527",range: "10",weight: "1.2 kg",output: "27 watts",rechargeable: "y", score: "89", batch_no: 2,
 battery: "25",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "4",radio: "n",waterproof_ip: "0",dust_ip: "0",category_id: cat_1.id, image_URL: "http://www.bhphotovideo.com/images/images2500x2500/marshall_audio_04091451_stockwell_speaker_with_case_1182314.jpg",
-block_1: "<t1> <strong>Positive Factors:</strong></t1>
+block_1: "<t1> <strong>The Good:</strong></t1>
 <ul>
   <li>Speakerphone capable</li>
   <li>82% of class in speaker output; 25 hours of play time/li>
   <li>Sound quality – Stereo, 4.5” of woofer, Class D amp</li>
   <li>This product is within your budget – 22% of category</li>
 </ul>
-<t1> <strong>Negative Factors:</strong></t1>
+<t1> <strong>The Not So Good:</strong></t1>
 <ul>
   <li>Limited durability; cover</li>
 </ul>",
@@ -130,7 +161,7 @@ The Stockwell packs a sonic punch, with two 2.25” woofers and a two-channel Cl
 
 Product.create(name: "RIVA Turbo X", desc: "",mpid: "1509f89e1600174a6bdc66a2b2ab7441",model_num: "9SIA1J23R23527",range: "10",weight: "3 lbs",output: "45 watts",rechargeable: "y", score: "92", batch_no: 2,
 battery: "26",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "4",radio: "n",waterproof_ip: "2",dust_ip: "2",category_id: cat_1.id, image_URL: "http://theshownewport.com/wp-content/uploads/2015/05/Riva-Turbo-black-angle-top.jpeg",
-block_1: "<t1> <strong>Positive Factors:</strong></t1>
+block_1: "<t1> <strong>The Good:</strong></t1>
 <ul>
   <li>Speakerphone capable</li>
   <li>- 99% of class in speaker output; 26 hours of play time</li>
@@ -139,7 +170,7 @@ block_1: "<t1> <strong>Positive Factors:</strong></t1>
   <li>This product is within your budget – 67% of category
 </li>
 </ul>
-<t1> <strong>Negative Factors:</strong></t1>
+<t1> <strong>The Not So Good:</strong></t1>
 <ul>
   <li>Limited durability; no cover; 87% of cat in weight</li>
 </ul>",

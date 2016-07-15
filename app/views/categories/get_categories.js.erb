@@ -1,2 +1,10 @@
 $("#cat-div").empty()
   .append("<%= escape_javascript(render(:partial => "categories/get_categories")) %>")
+
+  $("#categories-drop-down").change(function() {
+    var cat = $("#categories-drop-down option:selected").val()
+    var url = "/categories/" + cat + "/answers/new"
+    if (cat != "") {
+      window.location.replace(url);
+    }
+  });
