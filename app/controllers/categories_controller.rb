@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
     if params[:catString] == ""
       query_param = "asdfgsdagadsg%"
     else
-      query_param = params[:catString].downcase + "%"
+      query_param = "%" + params[:catString].downcase + "%"
     end
     @cat = Category.where("lower(name) LIKE ?", query_param)
     respond_to do |format|
