@@ -1,0 +1,9 @@
+<div id="category-show">
+  <section>
+    <div class = "row center">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <h3 class="display-4"> <%=@cat.name %></h3>
+        <%= button_to "Edit Category", category_edit_path(@cat.id), method: 'get', class: 'btn btn-warning' %>
+          <%= button_to "Delete Category", category_path(@cat.id), method: 'delete', class: 'btn btn-warning' %>
+  </section>
+</div>

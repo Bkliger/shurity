@@ -1,6 +1,9 @@
 class AnswersController < ApplicationController
   ActionController::Parameters.permit_all_parameters = true
   def new
+    #delete previous answers for this user
+    Answer.delete_all(user_id: current_user.id)
+
     @user_id = current_user.id
     @category = Category.find(params[:cat_id])
     @answer_array = []

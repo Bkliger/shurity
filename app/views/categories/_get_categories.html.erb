@@ -1,0 +1,13 @@
+
+<div id="cat-list">
+  <!-- decided not to go with a drop down -->
+  <!-- <!%= select_tag "categories-drop-down", options_from_collection_for_select(@cat, "id", "name"), include_blank: true %> -->
+  <ul>
+  <% for cat in @cat do %>
+        <li>
+          <p><%= link_to cat.name, new_answer_path(cat.id), class: "cat-detail"%></p><br>
+        </li>
+    <% end %>
+    </ul>
+
+</div

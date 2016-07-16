@@ -1,3 +1,37 @@
+#flash-error{
+  font-size: 15px;
+  color: white;
+  margin-top: 10px;
+}
+
+.devise-flash{
+  margin-left: 40px;
+  margin-top: 80px;
+
+}
+.table-space{
+  padding-left: 25px;
+}
+
+#cat-list{
+  font-size: 20px;
+  margin-left: -30px;
+
+}
+
+.cat-detail{
+  font-size: 20px;
+  display: block;
+  float: left;
+
+}
+#categories-drop-down {
+  font-size: 20px;
+  width: 300px;
+}
+#test-text {
+  font-size: 20px;
+}
 
 #mainNav {
 
@@ -94,14 +128,6 @@
 
 #product-show {
 
-  .col-centered {
-      display:inline-block;
-      /* reset the text-align */
-      text-align:left;
-      /* inline-block space fix */
-      margin-right:-4px;
-      width: 1500px;
-  }
   .center{
     text-align: center;
   }
@@ -139,13 +165,16 @@
     width: 100%;
     padding: 5px;
   }
+
+  .card-block {
+    width: 100%;
+  }
   .extra-width{
 
     width: 300px;
   }
   #large-show-container {
     width: auto;
-    display:inline-block;
   }
   .centerBlock {
                 display: table;
@@ -240,7 +269,13 @@
     text-align: center;
     font-family: "PDF_in_Text";
     margin-top: 0px;
+  }
 
+  h2 {
+  font-size: 20px;
+  text-align: center;
+  font-family: "PDF_in_Text";
+  margin-top: 0px;
   }
 
   h4 {
@@ -291,6 +326,30 @@
   }
 
 html,body { height: 100%; }
+
+#about {
+  background: image-url('shurity-family-for-landing-page.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height:100vh;
+  padding-top: 30px;
+  color: white;
+  margin-top: 20px;
+  margin-right: -20px;
+  margin-left: -30px;
+
+  h1 {
+    font-size: 70px;
+    margin-left: -30px;
+  }
+
+}
+
 
 #splash {
   .jumbotron {

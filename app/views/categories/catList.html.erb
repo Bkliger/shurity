@@ -1,0 +1,28 @@
+
+<div id="splash">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="row pull-right flash">
+      <% flash.each do |name, msg| %>
+        <% if name == "notice"%>
+          <strong id="flash-notice"> <%= name.capitalize %>: <%= msg %></strong>
+        <% elsif name == "error" || name == "alert" %>
+          <strong id="flash-error"> <%= name.capitalize %>: <%= msg %> </strong>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="large-container" class="container">
+      <br>
+      <div class="col-lg-12">
+        <h1 class="display-3">Categories</h1>
+            <%= button_to "New Category", new_category_path, method: 'get', class: 'btn btn-warning' %>
+        <div class="dropdown">
+          <ul class="list-group">
+              <% @cat.each do |c| %>
+                 <li><%= link_to c.name, category_path(c.id)%></li>
+              <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

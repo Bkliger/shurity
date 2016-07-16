@@ -21,7 +21,8 @@
                   <li class="nav-item"><%= link_to root_path do%>
                         <%= image_tag('shurity.svg', :class => "brand") %>
                       <% end %></li>
-                  <li class="nav-item"><%= link_to "About Shurity", root_path, class: "nav-link" %></li>
+                  <li class="nav-item"><%= link_to "About Shurity", pages_path("about"), class: "nav-link" %></li>
+
                   <% if user_signed_in?%>
                     <% if current_user.first_name != nil %>
                       <li><%= link_to current_user.first_name.capitalize + "'s Profile", edit_user_path(current_user.id) %></li>
