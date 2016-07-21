@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find params[:user_id]
-    if @user.update(post_params)
+    if @user.update(user_params)
       flash[:notice] = "User Successfully Updated"
     else
       flash[:notice] = "Problem with user update"
@@ -20,9 +20,10 @@ class UsersController < ApplicationController
 
   end
 
+
   private
 
-  def post_params
+  def user_params
     params.require(:user).permit(:first_name, :last_name, :email)
   end
 

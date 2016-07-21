@@ -2,9 +2,14 @@ class AnswersController < ApplicationController
   ActionController::Parameters.permit_all_parameters = true
   def new
     #delete previous answers for this user
-    Answer.delete_all(user_id: current_user.id)
-
-    @user_id = current_user.id
+    if current_user
+      Answer.delete_all(user_id: current_user.id)
+      @user_id = current_user.id
+    else
+      user = User.find_by(email: "bkliger@comcast.net")
+      Answer.delete_all(user_id: user.id)
+      @user_id = user.id
+    end
     @category = Category.find(params[:cat_id])
     @answer_array = []
     # this process loads up an array with an answer object for each question. The answer_text is empty.
@@ -67,6 +72,10 @@ class AnswersController < ApplicationController
 
   def answer_params(my_params)
     my_params.permit(:answer_text,:category_id,:user_id,:question_id)
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email)
   end
 
 end

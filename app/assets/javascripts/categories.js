@@ -12,7 +12,7 @@ $(document).ready(function() {
   $('#test-text').keyup(function(event) {
      if($('#test-text').val() != lastentry) {
        console.log("last Entry", lastentry)
-       $.get('/api/me', function getUserData(user) {
+      //  $.get('/api/me', function getUserData(user) {
             $.ajax({
                 method: "GET",
                 data: {catString: $('#test-text').val()},
@@ -20,7 +20,7 @@ $(document).ready(function() {
                 success: updateUserSuccess,
                 error: updateUserError
             });
-        });
+        // });
 
      }
      lastentry = $('#test-text').val()
