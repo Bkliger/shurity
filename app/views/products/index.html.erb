@@ -19,10 +19,10 @@
                   <% temp = Purchase.find_by product_id: product.id %>
                     <% if temp == nil %>
                     <!-- if there is no buying information, do nothing -->
-                      <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", class: "btn-primary" %></td>
+                      <td><score-2><%= product.score%></score-2><br><%= link_to "", class: "btn-primary" %></td>
                     <% else %>
                     <!-- if there is buying information, go to the show page for buying information -->
-                      <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", buy_path, class: "btn-primary" %></td>
+                      <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", buy_path, class: "btn-primar" %></td>
                     <% end %>
                   <td class="table-space">  <img class="prod-image-list" src="<%=product.image_URL%>" alt="994080p"></td>
                   <td class="table-space"><a href=""><%= product.name %></a></td>
@@ -33,7 +33,7 @@
 
                   <% if temp == nil %>
                     <!-- if there is no buying information, do nothing -->
-                    <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers",  class: "btn-primary" %></td>
+                    <td><score-2><%= product.score%></score-2><br><%= link_to "",  class: "btn-primary" %></td>
                   <% else %>
                       <!-- if there is buying information, go to the show page for buying information -->
                     <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", buy_path, class: "btn-primary" %></td>

@@ -57,6 +57,7 @@
       <% buy_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + params[:id] + "/2" %>
       <%= link_to 'Back to Product Matches', my_path, class: "btn-primary btn" %>
         <%= link_to "<--Change My Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn"%>
+<!-- don't display the buy button if there is no purchase information -->
           <% temp = Purchase.find_by product_id: params[:id] %>
           <% if temp == nil %>
           <% else %>
