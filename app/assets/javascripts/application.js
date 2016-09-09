@@ -53,6 +53,8 @@ $(document).ready(function() {
     });
 
     //on the new answer page, we need to get the value of the budget slider and put it into the input element to accumulate it for the fields_for
+
+// on the retailer page, this disables the buy button
         $(".ignore").click(function( event ) {
           alert("Function Not Yet Implementated")
           event.preventDefault();

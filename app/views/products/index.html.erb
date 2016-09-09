@@ -9,20 +9,43 @@
         <table id="prod-table">
 
         <% for product in @products do %>
-            <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s %>
+            <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s + "/1"%>
+            <% buy_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + product.id.to_s + "/2" %>
+
               <tr class="table-borders">
-                <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", root_path, class: "btn-primary ignore" %></td>
+<!-- first test to see if the product has a product description -->
                 <% if product.block_1 == nil %>
+                <!-- if it doesn't have a product description, check to see if has buying information -->
+                  <% temp = Purchase.find_by product_id: product.id %>
+                    <% if temp == nil %>
+                    <!-- if there is no buying information, do nothing -->
+                      <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", class: "btn-primary" %></td>
+                    <% else %>
+                    <!-- if there is buying information, go to the show page for buying information -->
+                      <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", buy_path, class: "btn-primary" %></td>
+                    <% end %>
                   <td class="table-space">  <img class="prod-image-list" src="<%=product.image_URL%>" alt="994080p"></td>
                   <td class="table-space"><a href=""><%= product.name %></a></td>
+                  <!-- if there is a product description -->
                 <% else %>
+                <!-- check to see if has buying information  -->
+                  <% temp = Purchase.find_by product_id: product.id %>
+
+                  <% if temp == nil %>
+                    <!-- if there is no buying information, do nothing -->
+                    <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers",  class: "btn-primary" %></td>
+                  <% else %>
+                      <!-- if there is buying information, go to the show page for buying information -->
+                    <td><score-2><%= product.score%></score-2><br><%= link_to "Retailers", buy_path, class: "btn-primary" %></td>
+                  <% end %>
+                  <!-- link to product show page for image -->
                   <td class="table-space"><%= link_to my_path do%>
                         <%= image_tag(product.image_URL, :class => "prod-image-list") %>
-                      <% end %></td>
+                  <% end %></td>
+                  <!-- link to product show page for product description -->
                   <td class="table-space"><%= link_to product.name, my_path %></td>
                 <% end %>
               </tr>
-
           <% end %>
           </table>
         </div><br><br>

@@ -22,7 +22,8 @@ rails g model Category name
 rails g model Question text presentation_type
 rails g model Option opt_value
 rails g model Product mpid model_num range weight output rechargeable:boolean battery solar:boolean charge_time remote_buttons:boolean speakerphone:boolean bluetooth_ver radio:boolean waterproof_ip dust_ip category:references
-
+rails g model Purchase rating retailer total shipping tax duration return warranty product:references
+rails generate model answer answer_text:string user:references category:references question:references
 
 
 
@@ -30,7 +31,7 @@ rails g model Product mpid model_num range weight output rechargeable:boolean ba
   <%= button_to "Select Category", edit_user_path(4,@user.id), :method => "get", :class => "btn btn-danger", :id => "main-btn" %>
 
 
-rails generate model answer answer_text:string user:references category:references question:references
+
 
 Answer.find_by_sql "Select answer_text, text, presentation_type from answers, questions, users where answers.question_id = questions.id and users.id = 61"
 
