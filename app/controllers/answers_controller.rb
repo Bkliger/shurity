@@ -6,9 +6,17 @@ class AnswersController < ApplicationController
       Answer.delete_all(user_id: current_user.id)
       @user_id = current_user.id
     else
-      user = User.find_by(email: "bkliger@comcast.net")
-      Answer.delete_all(user_id: user.id)
-      @user_id = user.id
+      if User.exists?(email: "bkliger@comcast.net")
+        user = User.find_by(email: "bkliger@comcast.net")
+        Answer.delete_all(user_id: user.id)
+        @user_id = user.id
+      else
+        user = User.new
+        user.email = 'bkliger@comcast.net'
+        user.password = '123456'
+        user.password_confirmation = '123456'
+        user.save!
+      end
     end
     @category = Category.find(params[:cat_id])
     @answer_array = []

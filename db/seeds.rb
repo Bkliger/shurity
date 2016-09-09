@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Purchase.destroy_all
 Product.destroy_all
 Answer.destroy_all
 Option.destroy_all
@@ -12,7 +13,8 @@ Question.destroy_all
 Category.destroy_all
 User.destroy_all
 
-# user1=User.create(first_name:"joe",last_name:"blow")
+
+User.create(email:"bkliger@comcast.net")
 
 cat_1 = Category.create(name: 'Bluetooth Speaker')
 Category.create(name: 'Over-Ear Headphones')
@@ -106,7 +108,7 @@ Surround sound for everyone in the area to listen to.</p>')
 Product.create(name: "Waterproof Bluetooth Speaker with Pool Floaty Shower Wall Attachment", desc: "",mpid: "7cbb739ce772df5194efddae029fc3ce",model_num: "MODB00VJYXFS0",range: "10 meters",weight: "3.6 lbs",output: "4 watts",rechargeable: "y", score: "62", batch_no: 1,
 battery: "6",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "y",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "4",dust_ip: "",category_id: cat_1.id, image_URL: "http://ecx.images-amazon.com/images/I/51EDvMzypyL._SX425_.jpg",)
 
-Product.create(name: "Floating Bluetooth Speaker", desc: "",mpid: "a8a79575ac3a4b3db41d4f98a02be5e5",model_num: "MODB00VJYXFS0",range: "9 meters",weight: "15.2 ounces",output: "3 watts",rechargeable: "n", score: "88", batch_no: 1,
+prod_1 = Product.create(name: "Floating Bluetooth Speaker", desc: "",mpid: "a8a79575ac3a4b3db41d4f98a02be5e5",model_num: "MODB00VJYXFS0",range: "9 meters",weight: "15.2 ounces",output: "3 watts",rechargeable: "n", score: "88", batch_no: 1,
 battery: "8",solar: "n",charge_time: "",remote_buttons: "y",speakerphone: "n",bluetooth_ver: "3.0+",radio: "y",waterproof_ip: "7",dust_ip: "",category_id: cat_1.id, image_URL: "https://www.brookstone.com/dis/dw/image/v2/AAYH_PRD/on/demandware.static/-/Sites-itemmaster_Brookstone/default/dw1a84c23a/hi-res/994080p.jpg?sw=500",
 block_1: "<t1> <strong>The Good:</strong></t1>
 <ul>
@@ -182,3 +184,10 @@ block_3: '<h4 class="card-title">This speaker plays at 11!</h4>
 <p class="card-text">The RIVA Turbo X features three proprietary speakers positioned that mix in-air to create virtual left and right speakers.
 The system delivers clean sound with plenty of bass. Activate the Trillium™ Surround and experience immersive surround sound, great for movies & games.
 With 45 watts of power the Turbo X delivers, especially at higher volumes.</p>')
+
+Purchase.create(rating: 92, retailer: "Bestbuy.com", total: 79.63, shipping: 5.99, tax: 0, duration: "3-5 Days", return: "E,J,T", warranty: "L,M,N,O,P", product_id: prod_1.id )
+Purchase.create(rating: 91, retailer: "Frys.com", total: 79.63, shipping: 14.50, tax: 0, duration: "4-6 Days", return: "E,J,T", warranty: "P,Q", product_id: prod_1.id )
+Purchase.create(rating: 88, retailer: "Amazon.com", total: 79.63, shipping: 0, tax: 0, duration: "3-5 Days", return: "E,J,T", warranty: "P,D,Q", product_id: prod_1.id )
+Purchase.create(rating: 86, retailer: "Apple.com", total: 79.63, shipping: 0, tax: 1.86, duration: "", return: "E,J,T", warranty: "V,D", product_id: prod_1.id )
+Purchase.create(rating: 76, retailer: "Newegg.com", total: 79.63, shipping: 12.23, tax: 0, duration: "", return: "E,J,T", warranty: "", product_id: prod_1.id )
+Purchase.create(rating: 76, retailer: "Nextwarehouse", total: 79.63, shipping: 0, tax: 11.77, duration: "", return: "E,J,T", warranty: "", product_id: prod_1.id )

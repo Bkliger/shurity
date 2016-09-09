@@ -1,0 +1,84 @@
+<div id="product-show2">
+  <section>
+    <div id="spacing"></div>
+
+    <div class="row">
+      <div class="centerBlock">
+        <div class="col-sm-5">
+          <!-- <img src="<!%=@product.image_URL%>" style="width: 90%; height: 90%" alt="MDN"> -->
+            <%= image_tag(@product.image_URL, :class => "prod-image2")%>
+        </div>
+        <div class="col-sm-7">
+          <h3 class="display-4"><%= @product.name %> </h3>
+          <h3> Retailer Listings </3>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="offset-col-1">
+        </div>
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-1">
+          <p>Rating</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Retailer</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Total</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Shipping</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Tax</p>
+        </div>
+        <div class="col-sm-2">
+          <p>Shipping Duration (days)</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Return Policy</p>
+        </div>
+        <div class="col-sm-1">
+          <p>Warranty</p>
+        </div>
+      </div>
+        <% for retailer in @retailers do %>
+          <div class="row row-borders">
+            <div class="col-sm-1">
+              <%= link_to 'Buy', "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/" + params[:id] + "/2" ,class: "btn-primary btn ignore"  %>
+            </div>
+            <div class="col-sm-1">
+              <td><%=retailer.rating.to_s%></td>
+            </div>
+            <div class="col-sm-1">
+              <td><%=retailer.retailer%></td>
+            </div>
+            <div class="col-sm-1">
+              <td><%=retailer.total.to_s%></td>
+            </div>
+            <div class="col-sm-1">
+              <td><%=retailer.shipping.to_s%></td>
+            </div>
+            <div class="col-sm-1">
+              <td><%=retailer.tax.to_s%></td>
+            </div>
+            <div class="col-sm-2">
+              <td><%=retailer.duration.to_s%></td>
+            </div>
+            <div class="col-sm-1">
+                <td><%=retailer.return.to_s%></td>
+            </div>
+            <div class="col-sm-1">
+            <td><%=retailer.warranty.to_s%></td>
+            </div>
+          </div>
+        <% end %>
+        <br></br>
+
+      <% my_path = "/categories/" + params[:cat_id] + "/users/" + params[:user_id] + "/products/1/index" %>
+      <%= link_to 'Back to Product Matches', my_path, class: "btn-primary btn" %>
+        <%= link_to "<--Change My Answers",  edit_answers_path(params[:user_id]), class: "btn-primary btn"%>
+  </section>
+</div>

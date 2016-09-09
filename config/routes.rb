@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get "/about", to: "users#about", as: "about"
 
   get "/categories/:cat_id/users/:user_id/products/:batch_no/index", to: "products#index",  as: "products"
-  get "/categories/:cat_id/users/:user_id/products/:id", to: "products#show", as: "product"
+  get "/categories/:cat_id/users/:user_id/products/:id/1", to: "products#show", as: "product"
+  get "/categories/:cat_id/users/:user_id/products/:id/2", to: "products#show2", as: "product2"
 
   # get "/users/:user_id", to:"users#show", as: "user"
   get "/users/:user_id/edit", to:"users#edit", as: "edit_user"
